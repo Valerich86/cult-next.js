@@ -30,18 +30,19 @@ export default function AnimatedLogo() {
       className="w-screen h-screen overflow-hidden"
     >
       <div
-        className={`${isAnimated ? "animate-alternativeBG" : "animate-logoShiningBG"} opacity-70 absolute top-0 -left-[10%] w-[120vw] h-full flex justify-center items-center overflow-hidden`}
+        className={`${isAnimated ? "animate-alternativeBG" : "animate-logoShiningBG"} opacity-70 absolute top-0 left-0 w-full h-full flex justify-center items-center overflow-hidden`}
       >
         <Image
           src="/technical/logo-BG-2.webp"
           alt=""
+          loading="eager"
           width={200}
           height={400}
           style={{ objectFit: "contain", height: "auto", width: "100%" }}
         />
       </div>
       <div
-        className={`${isAnimated ? "animate-none" : "animate-logoShiningFG"} opacity-0 absolute top-0 -left-[10%] w-[120vw] h-full flex justify-center items-center overflow-hidden`}
+        className={`${isAnimated ? "animate-none" : "animate-logoShiningFG"} opacity-0 absolute top-0 left-0 w-full h-full flex justify-center items-center overflow-hidden`}
       >
         <Image
           src="/technical/logo-FG-2.webp"

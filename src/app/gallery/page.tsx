@@ -25,7 +25,7 @@ export default async function Gallery() {
       <div className="relative w-36 h-28" key={i}>
         <ImageContainer
           src={`/${master}/${filename}`}
-          delay={i / 25}
+          delay={i / 20}
           rotate={Math.floor(Math.random() * 21) - 10}
           containerId="gallery"
           animateOnce
