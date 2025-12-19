@@ -42,7 +42,7 @@ export default function AnimatedLogo() {
         />
       </div>
       <div
-        className={`${isAnimated ? "animate-none" : "animate-logoShiningFG"} opacity-0 absolute top-0 left-0 w-full h-full flex justify-center items-center overflow-hidden`}
+        className={`${isAnimated ? "animate-none" : "animate-logoShiningFG"} opacity-5 absolute top-0 left-0 w-full h-full flex justify-center items-center overflow-hidden`}
       >
         <Image
           src="/technical/logo-FG-2.webp"

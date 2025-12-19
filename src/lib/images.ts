@@ -20,4 +20,6 @@ export async function getGallery(master:string) {
   }
 }
 
+export const news1 = ["news-3.webp", "news-2.webp", "news-1.webp"];
+
 

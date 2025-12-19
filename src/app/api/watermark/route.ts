@@ -5,8 +5,8 @@ import path from "path";
 import sharp from "sharp";
 import { getTattoosForWatermark } from "@/lib/images";
 
-const CURRENT_DESTINATION = "arthur";           // меняем только здесь
-const CURRENT_COLLECTION = getTattoosForWatermark("arthur"); // меняем только здесь
+const CURRENT_DESTINATION = "news";           // меняем только здесь
+const CURRENT_COLLECTION = ["news-1.jpg", "news-2.png", "news-3.png"]; // меняем только здесь
 const PUBLIC_DIR = path.join(process.cwd(), "public");
 const IMAGES_DIR = path.join(PUBLIC_DIR, "garbage"); // Оригиналы: public/images/photo.jpg
 const WATERMARKED_DIR = path.join(PUBLIC_DIR, CURRENT_DESTINATION); // Результат: public/watermarked/photo.webp

@@ -1,6 +1,10 @@
 export const headline = "Чердак. Пермь. Ты знаешь, где.";
 
-export const subtitle1 = "Точка на карте — и в жизни."
+export const subtitle1 = "Точка на карте — и в жизни.";
+
+export const subtitle2 = "Не уверены, что хотите тату? А вдруг хотите? Давайте поговорим.";
+
+export const capture = "Идея живёт в голове. Мы поможем ей обрести форму на вашей коже."
 
 export const info = `CULT — студия татуировки и лазерного удаления:
 

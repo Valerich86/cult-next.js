@@ -49,7 +49,7 @@ export default function About() {
       <Headline text={headline1} />
 
       {/* секция "Студия"  */}
-      <section className="min-h-screen w-full flex flex-wrap items-center justify-center">
+      <section className="min-h-screen w-full flex flex-wrap items-center justify-center mb-48">
         <Subtitle text={subtitle1} />
         <div className="text-block">
           <TextContainer text={cult1} delay={0} />
@@ -58,7 +58,7 @@ export default function About() {
         </div>
         <div className="image-block mt-48 sm:mt-0">
           <ImageContainer
-            src="/studio/studio-2.webp"
+            src="/studio/studio-5.webp"
             optionalStyles="-top-20 -left-30"
             delay={0}
             rotate={-3}
@@ -79,10 +79,17 @@ export default function About() {
             containerId="about"
           />
           <ImageContainer
-            src="/studio/studio.webp"
-            optionalStyles="top-40 left-20"
+            src="/studio/studio-2.webp"
+            optionalStyles="top-40 left-15"
             delay={0.3}
-            rotate={9}
+            rotate={12}
+            containerId="about"
+          />
+          <ImageContainer
+            src="/studio/studio.webp"
+            optionalStyles="top-60"
+            delay={0.3}
+            rotate={15}
             containerId="about"
           />
         </div>
@@ -145,7 +152,7 @@ export default function About() {
           </h1>
           <Link
             href={`/gallery/tan`}
-            className="flex w-36 h-16 rounded-full bg-secondary justify-around items-center"
+            className="flex p-3 rounded-full bg-secondary justify-around items-center"
           >
             <span className="text-peachy2 flex items-center animate-pulse">
               Смотреть <GiSheikahEye size={30} /> все
@@ -229,7 +236,7 @@ export default function About() {
           </h1>
           <Link
             href={`/gallery/sonya`}
-            className="flex w-36 h-16 rounded-full bg-secondary justify-around items-center"
+            className="flex p-3 rounded-full bg-secondary justify-around items-center"
           >
             <span className="text-peachy2 flex items-center animate-pulse">
               Смотреть <GiSheikahEye size={30} /> все
@@ -249,7 +256,7 @@ export default function About() {
           ))}
         </div>
         <div className="relative w-screen h-screen mt-52">
-          {/* <VideoContainer src="" /> */}
+          <VideoContainer src="/video/tan.mp4" />
           <BigtextContainer
             text={sonya5}
             optionalStyles="justify-end items-start w-1/2 px-10 pt-10"
@@ -291,7 +298,7 @@ export default function About() {
           </h1>
           <Link
             href={`/gallery/arthur`}
-            className="flex w-36 h-16 rounded-full bg-secondary justify-around items-center"
+            className="flex p-3 rounded-full bg-secondary justify-around items-center"
           >
             <span className="text-peachy2 flex items-center animate-pulse">
               Смотреть <GiSheikahEye size={30} /> все
@@ -311,7 +318,7 @@ export default function About() {
           ))}
         </div>
         <div className="relative w-screen h-screen mt-52">
-          {/* <VideoContainer src="" /> */}
+          <VideoContainer src="/video/tan.mp4" />
           <BigtextContainer
             text={arthur5}
             optionalStyles="justify-end items-start w-1/2 px-10 pt-10"

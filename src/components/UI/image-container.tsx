@@ -50,12 +50,11 @@ export default function ImageContainer({
         initial={{ x: 50, opacity: 0, scale: 1.05 }}
         whileInView={{ x: 0, opacity: 1, scale: 1 }}
         viewport={{ once: animateOnce, amount: 0.4 }}
-        // whileHover={{ borderColor: "#d9b29c" }}
         animate={{
           width: fullscreen ? "100vw" : "",
           height: fullscreen ? "100vh" : "",
           position: fullscreen ? "fixed" : "",
-          zIndex: fullscreen ? 20 : "",
+          zIndex: fullscreen ? 60 : "",
           top: fullscreen ? 0 : "",
           left: fullscreen ? 0 : "",
         }}

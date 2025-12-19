@@ -41,6 +41,6 @@ html {
 }
 
 .image-block {
-  @apply h-[50vh] xl:h-[70vh] w-full sm:w-1/2 relative;
+  @apply h-100 w-full sm:w-1/2 relative;
 }
 

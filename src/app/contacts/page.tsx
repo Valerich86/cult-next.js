@@ -1,6 +1,7 @@
+import { GiEvilEyes } from "react-icons/gi";
 import Sidebar from "@/components/UI/sidebar";
 import Headline from "@/components/UI/headline";
-import { headline, subtitle1, info } from "@/lib/text/contacts";
+import { headline, subtitle1, subtitle2, capture, info } from "@/lib/text/contacts";
 import Socials from "@/components/UI/socials";
 import Decor from "@/components/UI/decor";
 import BigtextContainer from "@/components/UI/bigtext-container";
@@ -12,9 +13,29 @@ export default function Contacts() {
     <div className="content" id="contacts">
       <Sidebar containerId={"contacts"} scrollable />
 
-      <Decor count={1}/>
+      <Decor count={1} />
 
       <Headline text={headline} />
+
+      {/* получить консультацию */}
+      <section className="w-full h-screen flex flex-col justify-evenly ">
+        <h1 className="text-xl text-secondary md:text-2xl text-left">
+          {subtitle2}
+        </h1>
+        <p className="text-secondary">{capture}</p>
+        <a
+          href="https://vk.me/cult_perm"
+          target="_blank"
+          aria-label="consultation"
+          className="w-full"
+        >
+          <div className="bg-secondary flex w-full md:w-72 py-3 rounded-full justify-center items-center">
+            <span className="text-peachy2 flex justify-between w-[90%] items-center animate-pulse">
+              <span>Получить</span> <GiEvilEyes size={70} /> консультацию
+            </span>
+          </div>
+        </a>
+      </section>
 
       {/* соцсети */}
       <section className="w-full min-h-screen py-20 flex flex-col justify-center gap-y-20">
@@ -68,12 +89,15 @@ export default function Contacts() {
         ></iframe>
       </section>
 
-
       {/* футер */}
       <section className="w-full min-h-screen flex flex-col justify-center gap-y-20">
-        <BigtextContainer text={info}/>
+        <BigtextContainer text={info} />
         <div className="flex items-center gap-x-10">
-          <span className={`${font_capture.className} text-xl lg:text-2xl text-secondary`}>Разработчик сайта: </span>
+          <span
+            className={`${font_capture.className} text-xl lg:text-2xl text-secondary`}
+          >
+            Разработчик сайта:{" "}
+          </span>
           <MyLogo />
         </div>
       </section>
