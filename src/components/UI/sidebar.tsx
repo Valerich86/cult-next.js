@@ -27,7 +27,7 @@ export default function Sidebar({ containerId, scrollable }: SidebarProps) {
       if (position > 0) {
         requestAnimationFrame(() => {
           if (element instanceof Window) {
-            window.scrollBy({ top: -Math.max(1, Math.floor(position / 10)) });
+            window.scrollBy({ top: -Math.max(15, Math.floor(position / 5)) });
           } else {
             element.scrollTop =
               position - Math.max(1, Math.floor(position / 10));

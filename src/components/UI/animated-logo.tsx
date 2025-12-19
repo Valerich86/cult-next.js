@@ -30,7 +30,7 @@ export default function AnimatedLogo() {
       className="w-screen h-screen"
     >
       <div
-        className={`${isAnimated ? "animate-alternativeBG" : "animate-logoShiningBG"} opacity-70 absolute top-0 left-0 w-full h-full flex justify-center items-center overflow-hidden`}
+        className={`${isAnimated ? "animate-alternativeBG" : "animate-logoShiningBG"} opacity-70 absolute top-0 -left-[5%] w-[110vw] h-full flex justify-center items-center overflow-hidden`}
       >
         <Image
           src="/technical/logo-BG-2.webp"

@@ -25,7 +25,7 @@ export default function VideoContainer({ src }: { src: string }) {
   return (
     <motion.video
       ref={ref}
-      className="absolute w-full h-[90vh] rounded-xl shadow-lg opacity-30 object-cover"
+      className="absolute w-full h-[90vh] rounded-xl shadow-lg opacity-50 object-cover"
       muted
       loop
       playsInline

@@ -7,10 +7,8 @@ export default function Home() {
   return (
     <>
       <NavigationBar/>
-      {/* <HomeBGImage /> */}
       <AnimatedCapture />
       <AnimatedLogo />
-      
     </>
   );
 }

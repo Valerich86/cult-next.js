@@ -51,12 +51,12 @@ export default function About() {
       {/* секция "Студия"  */}
       <section className="min-h-screen w-full flex flex-wrap items-center justify-center">
         <Subtitle text={subtitle1} />
-        <div className="w-full h-screen relative xl:w-1/2 flex flex-col items-center justify-between">
+        <div className="w-full h-screen relative lg:w-1/2 flex flex-col items-center justify-between">
           <TextContainer text={cult1} delay={0} />
           <TextContainer text={cult2} optionalStyles=" -ml-5" delay={0.1} />
           <TextContainer text={cult3} optionalStyles=" ml-5" delay={0.2} />
         </div>
-        <div className="w-full h-[50vh] lg:h-[70vh] mt-52 lg:mt-0 xl:w-1/2 relative">
+        <div className="w-full h-[50vh] xl:h-[70vh] mt-52 lg:mt-0 lg:w-1/2 relative">
           <ImageContainer
             src="/studio/studio-2.webp"
             optionalStyles="-top-20 -left-30"
@@ -95,7 +95,7 @@ export default function About() {
       {/* секция "Андрей"  */}
       <section className="min-h-screen w-full flex flex-wrap items-center justify-center">
         <Subtitle text={subtitle2} />
-        <div className="w-full h-[50vh] lg:h-[70vh] xl:w-1/2 relative">
+        <div className="w-full h-[50vh] xl:h-[70vh] lg:h-[40vh] lg:w-1/2 relative">
           <ImageContainer
             src="/studio/tan-2.webp"
             optionalStyles="left-30"
@@ -133,7 +133,7 @@ export default function About() {
             containerId="about"
           />
         </div>
-        <div className="w-full h-screen relative xl:w-1/2 mt-52 lg:mt-0 flex flex-col items-center justify-between">
+        <div className="w-full h-screen relative lg:w-1/2 mt-52 lg:mt-0 flex flex-col items-center justify-between">
           <TextContainer text={tan1} delay={0} />
           <TextContainer text={tan2} optionalStyles="ml-5" delay={0.1} />
           <TextContainer text={tan3} optionalStyles="ml-10" delay={0.2} />
@@ -187,12 +187,12 @@ export default function About() {
       {/* секция "Соня"  */}
       <section className="min-h-screen w-full flex flex-wrap items-center justify-center ">
         <Subtitle text={subtitle3} />
-        <div className="w-full h-screen relative xl:w-1/2 flex flex-col items-center justify-between">
+        <div className="w-full h-screen relative lg:w-1/2 flex flex-col items-center justify-between">
           <TextContainer text={sonya1} delay={0} />
           <TextContainer text={sonya2} optionalStyles=" -ml-5" delay={0.1} />
           <TextContainer text={sonya3} optionalStyles=" ml-5" delay={0.2} />
         </div>
-        <div className="w-full h-[50vh] lg:h-[70vh] mt-52 lg:mt-0 xl:w-1/2 relative">
+        <div className="w-full h-[50vh] xl:h-[70vh] lg:h-[40vh] mt-52 lg:mt-0 lg:w-1/2 relative">
           <ImageContainer
             src="/studio/sonya-2.webp"
             optionalStyles="-top-20 -left-30"
@@ -263,7 +263,7 @@ export default function About() {
       {/* секция "Артур"  */}
       <section className="min-h-screen w-full flex flex-wrap items-center justify-center ">
         <Subtitle text={subtitle4} />
-        <div className="w-full h-[50vh] lg:h-[70vh] xl:w-1/2 relative">
+        <div className="w-full h-[50vh] xl:h-[70vh] lg:h-[40vh] lg:w-1/2 relative">
           <ImageContainer
             src="/studio/arthur-2.webp"
             optionalStyles="left-30"
@@ -280,7 +280,7 @@ export default function About() {
             containerId="about"
           />
         </div>
-        <div className="w-full h-screen relative xl:w-1/2 mt-52 lg:mt-0 flex flex-col items-center justify-between">
+        <div className="w-full h-screen relative lg:w-1/2 mt-52 lg:mt-0 flex flex-col items-center justify-between">
           <TextContainer text={arthur1} delay={0} />
           <TextContainer text={arthur2} optionalStyles="ml-5" delay={0.1} />
           <TextContainer text={arthur3} optionalStyles="-ml-2" delay={0.2} />
