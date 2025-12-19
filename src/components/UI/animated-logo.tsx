@@ -27,7 +27,7 @@ export default function AnimatedLogo() {
         ease: "easeInOut",
         repeatDelay: 0,
       }}
-      className="w-screen h-screen"
+      className="w-screen h-screen overflow-hidden"
     >
       <div
         className={`${isAnimated ? "animate-alternativeBG" : "animate-logoShiningBG"} opacity-70 absolute top-0 left-0 w-full h-full flex justify-center items-center overflow-hidden`}
