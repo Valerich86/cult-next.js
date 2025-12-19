@@ -12,7 +12,7 @@ export default function BigtextContainer({ text, optionalStyles="" }: BigtextCon
   return (
     <motion.div
       className={`w-full min-h-screen flex items-center ${optionalStyles}`}
-      initial={{ opacity: 0, x: -100 }}
+      initial={{ opacity: 0, x: -50 }}
       whileInView={{  opacity: 1, x: 0 }}
       viewport={{ once: true, amount: 0.5 }}
       transition={{

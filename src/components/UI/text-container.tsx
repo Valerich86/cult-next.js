@@ -24,7 +24,7 @@ export default function TextContainer({
       <motion.div
         initial={{ x: -50, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{ once: false, amount: 0.5 }}
         transition={{ duration: 0.4, delay: delay }}
       >
         <p

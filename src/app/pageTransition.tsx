@@ -19,7 +19,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
           mass: 0.8,
         }}
         // transition={{ duration: 2, ease: "easeIn"}}
-        className="w-screen h-screen"
+        className="w-screen h-screen overflow-x-hidden"
       >
         {children}
       </motion.div>
