@@ -11,7 +11,7 @@ export default function News() {
     <div className="content" id="news">
       <Sidebar containerId={"news"} scrollable />
 
-      <Decor count={20} maxSize={40}/>
+      <Decor count={5} maxSize={30}/>
 
       <Headline text={"Новости здесь"} />
       

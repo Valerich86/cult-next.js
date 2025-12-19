@@ -12,32 +12,31 @@ interface SidebarProps {
 export default function Sidebar({ containerId, scrollable }: SidebarProps) {
   const router = useRouter();
 
-  // const returnToTop = () => {
-  //   document
-  //     .getElementById(containerId)
-  //     ?.scrollTo({ top: 0, behavior: "smooth" });
-  // };
   const returnToTop = () => {
     const element = document.getElementById(containerId) || window;
+    const duration = 200;
+    const start =
+      element instanceof Window ? window.pageYOffset : element.scrollTop;
+    const startTime = performance.now();
 
-    const scrollToTop = () => {
-      const position =
-        element instanceof Window ? window.pageYOffset : element.scrollTop;
+    const animateScroll = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeOut = 1 - Math.pow(1 - progress, 2);
+      const position = start * (1 - easeOut);
 
-      if (position > 0) {
-        requestAnimationFrame(() => {
-          if (element instanceof Window) {
-            window.scrollBy({ top: -Math.max(15, Math.floor(position / 5)) });
-          } else {
-            element.scrollTop =
-              position - Math.max(1, Math.floor(position / 10));
-          }
-          scrollToTop();
-        });
+      if (element instanceof Window) {
+        window.scrollTo(0, position);
+      } else {
+        element.scrollTop = position;
+      }
+
+      if (progress < 1) {
+        requestAnimationFrame(animateScroll);
       }
     };
 
-    scrollToTop();
+    requestAnimationFrame(animateScroll);
   };
 
   return (

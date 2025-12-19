@@ -17,7 +17,7 @@ export default function TextContainer({
 
   return (
     <div
-      className={` w-full lg:w-4/5 h-auto p-10 flex justify-center 
+      className={`w-full lg:w-4/5 h-auto p-3 flex justify-center 
         items-center overflow-hidden rounded-xl z-20 shadow-2xl 
         shadow-black bg-brown ${optionalStyles}`}
     >
