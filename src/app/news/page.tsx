@@ -16,7 +16,7 @@ interface NewsItemProps {
 export default function News() {
   const NewsItem = ({ subtitle, text, images }: NewsItemProps) => {
     return (
-      <section className="w-full min-h-screen ">
+      <section className="w-full min-h-screen">
         {subtitle && <Subtitle text={subtitle} />}
         {images && (
           <div className={`w-full h-[80vh] relative`}>

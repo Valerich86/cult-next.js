@@ -1,5 +1,3 @@
-// 'use client'
-
 import { GiSheikahEye } from "react-icons/gi";
 import Sidebar from "@/components/UI/sidebar";
 import Headline from "@/components/UI/headline";

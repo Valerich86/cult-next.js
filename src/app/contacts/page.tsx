@@ -18,7 +18,7 @@ export default function Contacts() {
       <Headline text={headline} />
 
       {/* получить консультацию */}
-      <section className="w-full h-screen flex flex-col justify-evenly ">
+      <section className="w-full h-screen flex flex-col justify-center gap-y-10">
         <h1 className="text-xl text-secondary md:text-2xl text-left">
           {subtitle2}
         </h1>
@@ -92,14 +92,14 @@ export default function Contacts() {
       {/* футер */}
       <section className="w-full min-h-screen flex flex-col justify-center gap-y-20">
         <BigtextContainer text={info} />
-        <div className="flex items-center gap-x-10">
+        {/* <div className="flex items-center gap-x-10">
           <span
             className={`${font_capture.className} text-xl lg:text-2xl text-secondary`}
           >
             Разработчик сайта:{" "}
           </span>
           <MyLogo />
-        </div>
+        </div> */}
       </section>
     </div>
   );

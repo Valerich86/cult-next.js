@@ -74,6 +74,8 @@ export default function ImageContainer({
           className={`h-full w-full ${
             fullscreen ? "object-contain" : "object-cover"
           } object-center`}
+          quality={75} // снизьте до 60–70
+          loading="lazy" // отложенная загрузка
         />
       </motion.div>
     </>

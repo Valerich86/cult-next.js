@@ -6,6 +6,7 @@ import Decor from "@/components/UI/decor";
 import { headline, block1, block2, block3, block4 } from "@/lib/text/gallery";
 import Headline from "@/components/UI/headline";
 import TextContainer from "@/components/UI/text-container";
+import { getBlobs } from "@/lib/blob-store";
 
 export default async function Gallery() {
   const tan_gallery = await getGallery("tan");
