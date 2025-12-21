@@ -48,7 +48,7 @@ export default function MyLogo() {
       playsInline // Для iOS
       preload="metadata"
     >
-      <source src={"/video/my-logo.mp4"} type="video/mp4" />
+      <source src={"/video/my-logo(bubbles).webm"} type="video/webm" />
       Ваш браузер не поддерживает видео.
     </motion.video>
   );

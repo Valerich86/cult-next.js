@@ -159,7 +159,7 @@ export default function About() {
         </div>
         <div className="w-full flex justify-between flex-wrap pt-20">
           {Array.from({ length: 8 }, (_, i) => (
-            <div className="relative w-36 h-28" key={i}>
+            <div className="relative w-36 h-28 lg:w-32" key={i}>
               <ImageContainer
                 src={`/tan/tattoo-tan-${i + 1}.webp`}
                 delay={i / 10}
@@ -243,7 +243,7 @@ export default function About() {
         </div>
         <div className="w-full flex justify-between flex-wrap pt-20">
           {Array.from({ length: 8 }, (_, i) => (
-            <div className="relative w-36 h-28" key={i}>
+            <div className="relative w-36 h-28 lg:w-32" key={i}>
               <ImageContainer
                 src={`/sonya/tattoo-sonya-${i + 21}.webp`}
                 delay={i / 10}
@@ -305,7 +305,7 @@ export default function About() {
         </div>
         <div className="w-full flex justify-between flex-wrap pt-20">
           {Array.from({ length: 8 }, (_, i) => (
-            <div className="relative w-36 h-28" key={i}>
+            <div className="relative w-36 h-28 lg:w-32" key={i}>
               <ImageContainer
                 src={`/arthur/tattoo-arthur-${i + 1}.webp`}
                 delay={i / 10}

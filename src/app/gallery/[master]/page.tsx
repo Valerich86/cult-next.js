@@ -17,7 +17,7 @@ export default async function Gallery(props: {
 
   return (
     <div className="content" id="gallery">
-      <Decor count={3}/>
+      <Decor />
       <Sidebar containerId="gallery" scrollable/>
       <Subtitle text={subtitle}/>
       <div className="w-full flex justify-between flex-wrap pt-20">

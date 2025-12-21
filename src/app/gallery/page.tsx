@@ -37,7 +37,7 @@ export default async function Gallery() {
 
   return (
     <div className="content" id="gallery">
-      <Decor count={5}/>
+      <Decor />
       <Sidebar containerId="gallery" scrollable />
 
       <Headline text={headline}/>
