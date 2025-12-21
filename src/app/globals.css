@@ -33,7 +33,7 @@ html {
   }
 
 .content {
-  @apply w-full h-screen px-offsetX pb-offsetY overflow-x-hidden overflow-y-auto scroll-smooth;
+  @apply w-full h-screen px-offsetX pb-50 overflow-x-hidden overflow-y-auto scroll-smooth;
 }
 
 .text-block {
