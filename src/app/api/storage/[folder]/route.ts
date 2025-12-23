@@ -6,6 +6,7 @@ export async function GET(
   request: Request,
   { params }: { params: Promise<{ folder: string }> }
 ) {
+  throw new Error('Сервис временно недоступен');
   try {
     let { folder } = await params;
     if (folder.startsWith("news")) {

@@ -14,7 +14,6 @@ export default function GallerySection({ master, storageUrl }: { master: string,
   const fetchGallery = async () => {
     try {
       const response = await fetch(`/api/storage/${master}`);
-      throw new Error('Сервис временно недоступен');
       if (response.ok) {
         const result = await response.json();
         setPhotos(result);
