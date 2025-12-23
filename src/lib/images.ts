@@ -10,10 +10,10 @@ export function getTattoosForWatermark (master:string) {
 }
 
 
-export async function getGallery(master:string) {
-  const galleryPath = join(process.cwd(), 'public', master);
+export async function getFiles(folder:string) {
+  const targetPath = join(process.cwd(), 'public', folder);
   try {
-    const files = await readdir(galleryPath);
+    const files = await readdir(targetPath);
     return files;
   } catch (error) {
     console.error(error);

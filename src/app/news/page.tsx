@@ -1,20 +1,24 @@
 import Sidebar from "@/components/UI/sidebar";
 import Headline from "@/components/UI/headline";
 import { headline, text1 } from "@/lib/text/news";
-import { news1 } from "@/lib/images";
 import Decor from "@/components/UI/decor";
 import Subtitle from "@/components/UI/subtitle";
 import ImageContainer from "@/components/UI/image-container";
 import BigtextContainer from "@/components/UI/bigtext-container";
+import { baseUrl, bucketName, getObjects } from "@/lib/vk-cloud";
 
 interface NewsItemProps {
   subtitle?: string;
   text: string;
-  images?: string[];
+  folder: string;
 }
 
 export default function News() {
-  const NewsItem = ({ subtitle, text, images }: NewsItemProps) => {
+  const NEWS_FOLDER = "news/";
+
+  const NewsItem = async ({ subtitle, text, folder }: NewsItemProps) => {
+    const images = await getObjects(folder);
+
     return (
       <section className="w-full min-h-screen">
         {subtitle && <Subtitle text={subtitle} />}
@@ -30,7 +34,7 @@ export default function News() {
                 }}
               >
                 <ImageContainer
-                  src={`/news/${item}`}
+                  src={`${baseUrl}/${bucketName}/${item.Key}`}
                   delay={i / 10}
                   rotate={Math.floor(Math.random() * 21) - 10}
                   containerId="news"
@@ -55,7 +59,7 @@ export default function News() {
       <NewsItem
         subtitle="Главная и единственная новость на данный момент"
         text={text1}
-        images={news1}
+        folder={`${NEWS_FOLDER}news-1`}
       />
     </div>
   );

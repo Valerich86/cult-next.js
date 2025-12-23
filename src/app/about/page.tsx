@@ -34,9 +34,12 @@ import Link from "next/link";
 import VideoContainer from "@/components/UI/video-container";
 import BigtextContainer from "@/components/UI/bigtext-container";
 import Socials from "@/components/UI/socials";
+import { getFiles } from "@/lib/images";
 
-export default function About() {
-  const tanTattooLenght = 91;
+export default async function About() {
+  const tanStaticTattoos = await getFiles("tan");
+  const sonyaStaticTattoos = await getFiles("sonya");
+  const arthurStaticTattoos = await getFiles("arthur");
 
   return (
     <div className="content" id="about">
@@ -158,10 +161,10 @@ export default function About() {
           </Link>
         </div>
         <div className="w-full flex justify-between flex-wrap pt-20">
-          {Array.from({ length: 8 }, (_, i) => (
+          {tanStaticTattoos?.map((item, i) => (
             <div className="relative w-36 h-28 lg:w-32" key={i}>
               <ImageContainer
-                src={`/tan/tattoo-tan-${i + 1}.webp`}
+                src={`/tan/${item}`}
                 delay={i / 10}
                 rotate={Math.floor(Math.random() * 21) - 10}
                 containerId="about"
@@ -242,10 +245,10 @@ export default function About() {
           </Link>
         </div>
         <div className="w-full flex justify-between flex-wrap pt-20">
-          {Array.from({ length: 8 }, (_, i) => (
+          {sonyaStaticTattoos?.map((item, i) => (
             <div className="relative w-36 h-28 lg:w-32" key={i}>
               <ImageContainer
-                src={`/sonya/tattoo-sonya-${i + 21}.webp`}
+                src={`/sonya/${item}`}
                 delay={i / 10}
                 rotate={Math.floor(Math.random() * 21) - 10}
                 containerId="about"
@@ -304,10 +307,10 @@ export default function About() {
           </Link>
         </div>
         <div className="w-full flex justify-between flex-wrap pt-20">
-          {Array.from({ length: 8 }, (_, i) => (
+          {arthurStaticTattoos?.map((item, i) => (
             <div className="relative w-36 h-28 lg:w-32" key={i}>
               <ImageContainer
-                src={`/arthur/tattoo-arthur-${i + 1}.webp`}
+                src={`/arthur/${item}`}
                 delay={i / 10}
                 rotate={Math.floor(Math.random() * 21) - 10}
                 containerId="about"

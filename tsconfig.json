@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "src/lib/vk-cloud.js", "src/lib/actions.js"  ],
   "exclude": ["node_modules"]
 }
