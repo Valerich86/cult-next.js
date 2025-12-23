@@ -102,12 +102,12 @@ const Link4 = () => {
 };
 
 export default function NavigationBar() {
-  useEffect(() => {
-    if (window.location.pathname === "/") {
-      throw new Error("Приложение временно недоступно");
-    }
-  }, []);
-  
+  // useEffect(() => {
+  //   if (window.location.pathname === "/") {
+  //     throw new Error("Приложение временно недоступно");
+  //   }
+  // }, []);
+
   return (
     <div className="w-screen h-screen z-30 absolute top-0 left-0 flex justify-around items-center">
       <div className="w-[80vw] absolute top-3/5 left-1/2 transform -translate-x-1/2 flex justify-between items-center">

@@ -20,7 +20,7 @@ export default function Error({
       <div className="flex gap-3 text-secondary items-center text-2xl">
         <p>Срочно сообщи о проблеме сюда</p>
         <FaArrowRight size={30} />
-        <a href={"tel:+79630173055"} target="_blank" aria-label="Телефон">
+        <a href={"tel:+79655676081"} target="_blank" aria-label="Телефон">
           <FaPhone
             className="hover:text-blue-500 text-blue-600 transition-colors ml-4"
             size={35}
