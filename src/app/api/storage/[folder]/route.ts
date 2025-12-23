@@ -11,7 +11,6 @@ export async function GET(
     if (folder.startsWith("news")) {
       folder = "news/" + folder;
     }
-    console.log(folder)
     const command = new ListObjectsV2Command({
       Bucket: bucketName, // имя вашего бакета
       Prefix: `${folder}/`, // путь к папке (обязательно с / в конце!)

@@ -8,7 +8,7 @@ interface ImageContainerProps {
   src: string;
   optionalStyles?: string;
   rotate: number;
-  delay: number;
+  delay?: number;
   border?: boolean;
   animateOnce?: boolean;
   containerId: string;
@@ -17,7 +17,7 @@ interface ImageContainerProps {
 export default function ImageContainer({
   src,
   optionalStyles = "",
-  delay,
+  delay = 0,
   border = true,
   animateOnce = false,
   rotate,

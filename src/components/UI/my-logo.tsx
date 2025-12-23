@@ -27,7 +27,8 @@ export default function MyLogo() {
 
     // Остановить на последнем кадре
     const handleEnded = () => {
-      video.currentTime = video.duration || 0; // Убедимся, что стоит на конце
+      // video.currentTime = video.duration || 0; // Убедимся, что стоит на конце
+      video.currentTime = 4.5; // Убедимся, что стоит на конце
       video.pause();
     };
 

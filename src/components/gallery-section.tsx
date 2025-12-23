@@ -35,7 +35,7 @@ export default function GallerySection({ master, storageUrl }: { master: string,
         <div className="relative w-36 h-28" key={i}>
           <ImageContainer
             src={`${storageUrl}/${item}`}
-            delay={i / 25}
+            // delay={i / 25}
             rotate={Math.floor(Math.random() * 21) - 10}
             containerId="gallery"
             animateOnce

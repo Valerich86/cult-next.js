@@ -3,7 +3,7 @@ import Sidebar from "@/components/UI/sidebar";
 import Headline from "@/components/UI/headline";
 import { headline, subtitle1, subtitle2, capture, info } from "@/lib/text/contacts";
 import Socials from "@/components/UI/socials";
-import Decor from "@/components/UI/decor";
+// import Decor from "@/components/UI/decor";
 import BigtextContainer from "@/components/UI/bigtext-container";
 import MyLogo from "@/components/UI/my-logo";
 import { font_capture } from "@/lib/fonts";
