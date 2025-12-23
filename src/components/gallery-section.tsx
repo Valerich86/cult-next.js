@@ -14,6 +14,7 @@ export default function GallerySection({ master, storageUrl }: { master: string,
   const fetchGallery = async () => {
     try {
       const response = await fetch(`/api/storage/${master}`);
+      throw new Error('Сервис временно недоступен');
       if (response.ok) {
         const result = await response.json();
         setPhotos(result);
@@ -35,7 +36,6 @@ export default function GallerySection({ master, storageUrl }: { master: string,
         <div className="relative w-36 h-28" key={i}>
           <ImageContainer
             src={`${storageUrl}/${item}`}
-            // delay={i / 25}
             rotate={Math.floor(Math.random() * 21) - 10}
             containerId="gallery"
             animateOnce

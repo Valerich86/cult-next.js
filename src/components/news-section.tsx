@@ -20,6 +20,7 @@ export default function NewsSection({
   const fetchGallery = async () => {
     try {
       const response = await fetch(`/api/storage/${folder}`);
+      throw new Error('Сервис временно недоступен');
       if (response.ok) {
         const result = await response.json();
         setPhotos(result);
