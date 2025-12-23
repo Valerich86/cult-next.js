@@ -42,7 +42,7 @@ const config: Config = {
             transform: "scaleY(2) translateY(-4px)",
           },
         },
-        spin: {
+        spinOnce: {
           to: {
             transform: "rotate(540deg)",
           },
@@ -104,7 +104,7 @@ const config: Config = {
       },
       animation: {
         iconTopHover: "iconTopHover 1s",
-        spin: "spin 0.7s ease-in-out",
+        spinOnce: "spinOnce 0.7s ease-in-out",
         bgImageSlide: "bgImageSlide 120s linear infinite",
         logoShiningBG: "logoShiningBG 10s ",
         logoShiningFG: "logoShiningFG 10s ease-out forwards",

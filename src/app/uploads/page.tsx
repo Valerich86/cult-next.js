@@ -39,7 +39,7 @@ export default function FileUploadForm() {
       });
       formData.append("targetFolder", targetFolder);
 
-      const response = await fetch("/api/upload", {
+      const response = await fetch("/api/storage", {
         method: "POST",
         body: formData,
       });

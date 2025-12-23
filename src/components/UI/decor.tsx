@@ -8,7 +8,7 @@ interface DecorProps {
   maxSize?:number;
 }
 
-export default function Decor({count=2, maxSize=15}:DecorProps) {
+export default function Decor({count=2, maxSize=10}:DecorProps) {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {

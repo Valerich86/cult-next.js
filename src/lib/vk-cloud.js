@@ -10,6 +10,10 @@ import {
 export const baseUrl = process.env.VK_CLOUD_ENDPOINT;
 export const bucketName = process.env.VK_CLOUD_BUCKET;
 
+export function fetchPath() {
+  return `${baseUrl}/${bucketName}`;
+}
+
 export const s3Client = new S3Client({
   region: "ru-msk", // или другой регион
   endpoint: baseUrl, // домен вашего региона

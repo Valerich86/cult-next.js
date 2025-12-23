@@ -42,7 +42,7 @@ export default function Sidebar({ containerId, scrollable }: SidebarProps) {
   return (
     <div className="fixed flex flex-col justify-between right-[5%] top-1/2 -translate-y-1/2 z-50 h-4/5 items-center">
       <span
-        className="text-peachy1 flex justify-center items-center cursor-pointer hover:animate-spin animate-pulse"
+        className="text-peachy1 flex justify-center items-center cursor-pointer hover:animate-spinOnce animate-pulse"
         onClick={() => {
           if (containerId === "about") router.replace("/");
           else router.back();
