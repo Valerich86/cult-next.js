@@ -4,6 +4,11 @@ import Subtitle from "@/components/UI/subtitle";
 import Decor from "@/components/UI/decor";
 import {baseUrl, bucketName, getObjects} from "@/lib/vk-cloud";
 import GallerySection from "@/components/gallery-section";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Галерея/Секция одного мастера/",
+};
 
 export default async function Gallery(props: {
   params: Promise<{ master: string }>;

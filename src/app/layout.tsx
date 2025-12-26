@@ -3,6 +3,14 @@ import "./globals.css";
 import { font_default } from "@/lib/fonts";
 import PageTransition from "./pageTransition";
 import Footer from "@/components/UI/footer";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    template: "CULT | %s",
+    default: "CULT",
+  },
+};
 
 export default function RootLayout({
   children,

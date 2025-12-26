@@ -7,7 +7,7 @@ import { useState } from "react";
 interface ImageContainerProps {
   src: string;
   optionalStyles?: string;
-  rotate: number;
+  rotate?: number;
   delay?: number;
   border?: boolean;
   animateOnce?: boolean;
@@ -20,7 +20,7 @@ export default function ImageContainer({
   delay = 0,
   border = true,
   animateOnce = false,
-  rotate,
+  rotate = 0,
   containerId,
 }: ImageContainerProps) {
   const [fullscreen, setFullscreen] = useState(false);

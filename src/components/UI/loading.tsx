@@ -1,5 +1,4 @@
 import { TbFidgetSpinner } from "react-icons/tb"; 
-import React from 'react'
 
 export default function Loading() {
   return (

@@ -1,10 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-// import { uploadFile } from '@/lib/vk-cloud';
 import { randomUUID } from "crypto";
 import sharp from "sharp";
-import { Jimp, JimpMime } from "jimp";
-import { s3Client } from "@/lib/vk-cloud";
-import { PutObjectCommand, ObjectCannedACL } from "@aws-sdk/client-s3";
+import { s3Client, bucketName } from "@/lib/vk-cloud";
+import { PutObjectCommand, ObjectCannedACL, DeleteObjectCommand } from "@aws-sdk/client-s3";
 
 export async function POST(request: NextRequest) {
   try {
@@ -120,3 +118,30 @@ async function processImage(file: File): Promise<Buffer> {
 
 
 
+export async function DELETE(request:Request) {
+  try {
+    const { objectKey } = await request.json();
+
+    if (!bucketName || !objectKey) {
+      return Response.json(
+        { error: 'не получены параметры для удаления' },
+        { status: 400 }
+      );
+    }
+
+    const command = new DeleteObjectCommand({
+      Bucket: bucketName,
+      Key: objectKey,
+    });
+
+    await s3Client.send(command);
+
+    return Response.json({ message: 'Изображение удалено' }, { status: 200 });
+  } catch (error) {
+    console.error('Error deleting object:', error);
+    return Response.json(
+      { error: 'Failed to delete object' },
+      { status: 500 }
+    );
+  }
+}

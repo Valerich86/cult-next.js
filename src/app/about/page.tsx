@@ -35,6 +35,11 @@ import VideoContainer from "@/components/UI/video-container";
 import BigtextContainer from "@/components/UI/bigtext-container";
 import Socials from "@/components/UI/socials";
 import { getFiles } from "@/lib/images";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "О нас/",
+};
 
 export default async function About() {
   const tanStaticTattoos = await getFiles("tan");

@@ -9,7 +9,7 @@ export async function GET(
   try {
     let { folder } = await params;
     if (folder.startsWith("news")) {
-      folder = "news/" + folder;
+      folder = "news/" + folder.substring(4);
     }
     const command = new ListObjectsV2Command({
       Bucket: bucketName, // имя вашего бакета
@@ -20,8 +20,7 @@ export async function GET(
     const result = response.Contents || [];
     let photos: string[] = [];
     if (result.length > 0) {
-      if (result[0].Key === `${folder}/`)
-        result.splice(0, 1);
+      if (result[0].Key === `${folder}/`) result.splice(0, 1);
       result.forEach((element) => {
         photos.push(element.Key!);
       });
@@ -32,3 +31,4 @@ export async function GET(
     return NextResponse.json({ status: 500 });
   }
 }
+

@@ -6,6 +6,11 @@ import Headline from "@/components/UI/headline";
 import TextContainer from "@/components/UI/text-container";
 import GallerySection from "@/components/gallery-section";
 import { baseUrl, bucketName } from "@/lib/vk-cloud";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Галерея/",
+};
 
 export default async function Gallery() {
 

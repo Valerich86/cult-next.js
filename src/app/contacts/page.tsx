@@ -7,6 +7,11 @@ import Decor from "@/components/UI/decor";
 import BigtextContainer from "@/components/UI/bigtext-container";
 import MyLogo from "@/components/UI/my-logo";
 import { font_capture } from "@/lib/fonts";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Контакты/",
+};
 
 export default function Contacts() {
   return (

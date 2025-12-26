@@ -44,3 +44,7 @@ html {
   @apply h-100 w-full sm:w-1/2 relative;
 }
 
+.admin-button {
+  @apply h-12 rounded bg-brown text-secondary flex justify-center items-center hover:bg-peachy2 hover:text-amber-100 cursor-pointer active:scale-99;
+}
+
