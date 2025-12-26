@@ -2,11 +2,15 @@
 
 import { desc1, desc2 } from "@/lib/text/admin";
 import { useState } from "react";
+import Editor from "./UI/editor/editor";
 
 export default function AddNewsForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  const [form, setForm] = useState({ title: "", content: "" });
+  const [form, setForm] = useState({
+    title: "",
+    content: "<p>Начните писать здесь...</p>",
+  });
   const [files, setFiles] = useState<File[]>([]);
   const [success, setSuccess] = useState<string[]>([]);
   const [targetFolder, setTargetFolder] = useState<string | undefined>(
@@ -107,7 +111,6 @@ export default function AddNewsForm() {
           <label className="mb-4 font-medium text-secondary flex gap-1">
             Введи текст новости: <span className="text-red-500">*</span>
           </label>
-          <p className="text-xs text-secondary">{desc1}</p>
           <textarea
             className="w-full border border-gray-300 rounded px-3 py-2 text-secondary"
             value={form.content}
@@ -118,6 +121,12 @@ export default function AddNewsForm() {
             cols={60}
             minLength={10}
           />
+          {/* <Editor
+            content={form.content}
+            onChange={(newContent) =>
+              setForm((prev) => ({ ...prev, content: newContent }))
+            }
+          /> */}
         </div>
         <button
           type="submit"

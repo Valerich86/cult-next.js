@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 const buttons = [
   { name: "Фото", href: "/admin/photos" },
   { name: "Новости", href: "/admin/news" },
+  { name: "На главную", href: "/" },
 ];
 
 export default async function Admin() {

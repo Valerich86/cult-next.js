@@ -48,7 +48,7 @@ export default function NewsPage() {
           </p>
           <div>
             <strong>Контент: </strong>
-            <p>{item.content.substring(0, 500) + "..."}</p>
+            <p>{item.content.substring(0, 300) + "..."}</p>
           </div>
         </div>
       </Link>

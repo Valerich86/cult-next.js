@@ -7,6 +7,7 @@ import Subtitle from "./UI/subtitle";
 import TextContainer from "./UI/text-container";
 import BigtextContainer from "./UI/bigtext-container";
 import type { News } from "./admin-news-page";
+import HTMLTextContainer from "./UI/editor/HTML-text-container";
 
 export default function NewsList({ storageUrl }: { storageUrl: string }) {
   const [news, setNews] = useState<News[]>([]);
@@ -56,9 +57,13 @@ export default function NewsList({ storageUrl }: { storageUrl: string }) {
     return (
       <section className="w-full min-h-screen">
         <Subtitle text={item.title} />
-        <TextContainer
-          text={"Опубликовано " + new Date(item.published_at).toLocaleDateString()}
-        />
+        <div className="w-full flex justify-center">
+          <TextContainer
+            text={
+              "Опубликовано " + new Date(item.published_at).toLocaleDateString()
+            }
+          />
+        </div>
         <div className={`w-full h-[80vh] relative mt-25`}>
           {isLoading && <Loading />}
           {images.length > 0 &&
@@ -82,12 +87,13 @@ export default function NewsList({ storageUrl }: { storageUrl: string }) {
             ))}
         </div>
         <BigtextContainer text={item.content} />
+        {/* <HTMLTextContainer content={item.content} /> */}
       </section>
     );
   };
 
   return (
-    <div className="w-full lg:w-2/3 flex flex-col gap-y-10 items-center">
+    <div className="w-full flex flex-col gap-y-10 items-center">
       {error && (
         <div className="text-red-500 text-center w-full py-4">{error}</div>
       )}

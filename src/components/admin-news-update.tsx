@@ -4,6 +4,7 @@ import Loading from "@/components/UI/loading";
 import { MdDelete } from "react-icons/md";
 import { useState, useEffect } from "react";
 import ImageContainer from "./UI/image-container";
+import Editor from "./UI/editor/editor";
 
 export default function UpdateNewsForm({
   storageUrl,
@@ -18,7 +19,7 @@ export default function UpdateNewsForm({
   const [photos, setPhotos] = useState([]);
   const [files, setFiles] = useState<File[]>([]);
   const [success, setSuccess] = useState<string[]>([]);
-  const [message, setMessage] = useState<string|null>(null);
+  const [message, setMessage] = useState<string | null>(null);
   const [targetFolder, setTargetFolder] = useState(id);
   const [deleteModalIsOpen, setDeleteModalIsOpen] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -41,7 +42,7 @@ export default function UpdateNewsForm({
       setIsLoading(false);
     }
   };
-  
+
   const fetchPhotos = async () => {
     setIsLoading(true);
     try {
@@ -56,7 +57,7 @@ export default function UpdateNewsForm({
     } finally {
       setIsLoading(false);
     }
-  }
+  };
 
   const handleDone = () => {
     window.location.href = "/admin/news";
@@ -67,7 +68,7 @@ export default function UpdateNewsForm({
     setMessage(null);
     setIsLoading(true);
     setError("");
-    console.log("submit")
+    console.log("submit");
     try {
       const response = await fetch(`/api/news/${id}`, {
         method: "PUT",
@@ -155,7 +156,7 @@ export default function UpdateNewsForm({
     }
   };
 
-  if (form.content === "" || isLoading) {
+  if (isLoading || (form.title === "" && form.content === "")) {
     return (
       <div className="content">
         <Loading />
@@ -175,7 +176,10 @@ export default function UpdateNewsForm({
           </label>
           <input
             className="w-full border border-gray-300 rounded px-3 py-2 text-secondary"
-            onChange={(e) => {setForm({ ...form, title: e.target.value }); setMessage(null);}}
+            onChange={(e) => {
+              setForm({ ...form, title: e.target.value });
+              setMessage(null);
+            }}
             value={form.title}
             required
           />
@@ -195,6 +199,12 @@ export default function UpdateNewsForm({
             cols={60}
             minLength={10}
           />
+          {/* <Editor
+            content={form.content}
+            onChange={(newContent) =>
+              setForm((prev) => ({ ...prev, content: newContent }))
+            }
+          /> */}
         </div>
         <button
           type="submit"
@@ -203,9 +213,7 @@ export default function UpdateNewsForm({
         >
           {"Исправить"}
         </button>
-        {message && (
-          <strong className="text-green-500">{message}</strong>
-        )}
+        {message && <strong className="text-green-500">{message}</strong>}
       </form>
 
       {!isLoading &&
@@ -237,8 +245,7 @@ export default function UpdateNewsForm({
           </div>
         ))}
 
-
-        {/* модальное окно удаления фото */}
+      {/* модальное окно удаления фото */}
       {deleteModalIsOpen && (
         <>
           <div className="w-screen h-screen bg-red-500 opacity-40 absolute top-0 left-0"></div>
@@ -273,15 +280,15 @@ export default function UpdateNewsForm({
         </>
       )}
 
-
-
       <form
         onSubmit={handleFileUploads}
         className={`w-full flex flex-col items-center gap-5`}
       >
         <div className="w-full">
           <label className="mb-4 font-medium text-secondary flex gap-1">
-            {photos.length === 3 ? "Чтобы добавить фото, удали старое" : `Можно добавить ${3 - photos.length} фото` }
+            {photos.length === 3
+              ? "Чтобы добавить фото, удали старое"
+              : `Можно добавить ${3 - photos.length} фото`}
             <span className="text-red-500">*</span>
           </label>
           <input
@@ -355,7 +362,9 @@ export default function UpdateNewsForm({
         {"Готово"}
       </button>
 
-      <span className="text-red-500 italic text-xs">* - обязательно заполнить</span>
+      <span className="text-red-500 italic text-xs">
+        * - обязательно заполнить
+      </span>
     </div>
   );
 }

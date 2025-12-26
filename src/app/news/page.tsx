@@ -4,7 +4,7 @@ import { headline } from "@/lib/text/news";
 import Decor from "@/components/UI/decor";
 import { baseUrl, bucketName } from "@/lib/vk-cloud";
 import { Metadata } from "next";
-import NewsList from "@/components/news-list";
+import NewsList from "../../components/news-list";
 
 export const metadata: Metadata = {
   title: "Новости/",
