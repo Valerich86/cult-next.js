@@ -14,16 +14,16 @@ export default function BigtextContainer({
 }: BigtextContainerProps) {
   return (
     <motion.div
-      className={`w-full min-h-screen flex items-center ${optionalStyles}`}
-      initial={{ opacity: 0, x: -1 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{
-        type: "spring",
-        stiffness: 300,
-        damping: 20,
-        delay: 0,
-      }}
+      // className={`w-full min-h-screen flex items-center ${optionalStyles}`}
+      // initial={{ opacity: 0, x: -1 }}
+      // whileInView={{ opacity: 1, x: 0 }}
+      // viewport={{ once: true, amount: 0.3 }}
+      // transition={{
+      //   type: "spring",
+      //   stiffness: 300,
+      //   damping: 20,
+      //   delay: 0,
+      // }}
     >
       <pre
         className={`whitespace-pre-wrap text-secondary ${font_default.className} text-lg lg:text-xl`}

@@ -12,6 +12,7 @@ import HTMLTextContainer from "./UI/editor/HTML-text-container";
 export default function NewsList({ storageUrl }: { storageUrl: string }) {
   const [news, setNews] = useState<News[]>([]);
   const [error, setError] = useState<string | undefined>(undefined);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     fetchNews();
@@ -19,6 +20,7 @@ export default function NewsList({ storageUrl }: { storageUrl: string }) {
 
   const fetchNews = async () => {
     setError(undefined);
+    setIsLoading(true);
     try {
       const response = await fetch(`/api/news`);
       if (response.ok) {
@@ -28,8 +30,14 @@ export default function NewsList({ storageUrl }: { storageUrl: string }) {
     } catch (error) {
       console.error(error);
       setError("Произошла ошибка получения данных.");
+    } finally {
+      setIsLoading(false);
     }
   };
+
+  if (isLoading) {
+    return (<Loading/> );
+  }
 
   const NewsItem = ({ item }: { item: News }) => {
     const [images, setImages] = useState([]);
