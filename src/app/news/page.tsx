@@ -1,6 +1,5 @@
 import Sidebar from "@/components/UI/sidebar";
 import Headline from "@/components/UI/headline";
-import { headline } from "@/lib/text/news";
 import Decor from "@/components/UI/decor";
 import { baseUrl, bucketName } from "@/lib/vk-cloud";
 import { Metadata } from "next";
@@ -17,7 +16,7 @@ export default function News() {
 
       <Decor />
 
-      <Headline text={headline} />
+      <Headline text={"Мы не газета. Но новости есть. Новости, которые не стираются"} />
 
       <NewsList storageUrl={`${baseUrl}/${bucketName}`} />
     </div>

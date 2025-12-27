@@ -7,7 +7,6 @@ import Subtitle from "./UI/subtitle";
 import TextContainer from "./UI/text-container";
 import BigtextContainer from "./UI/bigtext-container";
 import type { News } from "./admin-news-page";
-import HTMLTextContainer from "./UI/editor/HTML-text-container";
 import { FormatTextWithLinks } from "./UI/format-text";
 
 export default function NewsList({ storageUrl }: { storageUrl: string }) {
@@ -95,8 +94,6 @@ export default function NewsList({ storageUrl }: { storageUrl: string }) {
               </div>
             ))}
         </div>
-        {/* <BigtextContainer text={item.content} /> */}
-        {/* <HTMLTextContainer content={item.content} /> */}
         <FormatTextWithLinks text={item.content} />
       </section>
     );

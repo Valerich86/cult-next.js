@@ -2,7 +2,6 @@
 
 import { desc1, desc2 } from "@/lib/text/admin";
 import { useState } from "react";
-import Editor from "./UI/editor/editor";
 
 export default function AddNewsForm() {
   const [isLoading, setIsLoading] = useState(false);

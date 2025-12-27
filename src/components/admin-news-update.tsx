@@ -4,7 +4,6 @@ import Loading from "@/components/UI/loading";
 import { MdDelete } from "react-icons/md";
 import { useState, useEffect } from "react";
 import ImageContainer from "./UI/image-container";
-import Editor from "./UI/editor/editor";
 
 export default function UpdateNewsForm({
   storageUrl,
@@ -199,12 +198,6 @@ export default function UpdateNewsForm({
             cols={60}
             minLength={10}
           />
-          {/* <Editor
-            content={form.content}
-            onChange={(newContent) =>
-              setForm((prev) => ({ ...prev, content: newContent }))
-            }
-          /> */}
         </div>
         <button
           type="submit"
