@@ -29,7 +29,7 @@ export function FormatTextWithLinks({ text }: { text: string }) {
           href={part}
           target="_blank"
           rel="noopenerer noreferrer"
-          className="inline-flex items-center gap-2 text-peachy1 hover:underline group"
+          className="inline-flex items-center gap-2 text-peachy1 underline group"
         >
           <span>{domain}</span>
           <span className="text-xs opacity-0 group-hover:opacity-100 transition-opacity">

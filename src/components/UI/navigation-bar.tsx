@@ -5,9 +5,6 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { font_accent } from "@/lib/fonts";
 
-const linkStyle = `animate-pulse ${font_accent.className} text-peachy1 text-2xl md:text-3xl xl:text-4xl cursor-pointer 
-                  hover:blur-[1px] transition duration-100`;
-
 const Link1 = () => {
   return (
     <motion.div
@@ -19,7 +16,7 @@ const Link1 = () => {
         opacity: { duration: 2, delay: 1.4 },
       }}
     >
-      <Link className={linkStyle} href="/contacts">
+      <Link className={`link ${font_accent.className}`} href="/contacts">
         Контакты
       </Link>
     </motion.div>
@@ -37,7 +34,7 @@ const Link2 = () => {
         opacity: { duration: 2, delay: 0.8 },
       }}
     >
-      <Link className={linkStyle} href="/about">
+      <Link className={`link ${font_accent.className}`} href="/about">
         О нас
       </Link>
     </motion.div>
@@ -55,7 +52,7 @@ const Link5 = () => {
         opacity: { duration: 2, delay: 1.1 },
       }}
     >
-      <Link className={linkStyle} href={"/news"}>
+      <Link className={`link ${font_accent.className}`} href={"/news"}>
         Новости
       </Link>
     </motion.div>
@@ -94,7 +91,7 @@ const Link4 = () => {
         opacity: { duration: 2, delay: 0.5 },
       }}
     >
-      <Link className={linkStyle} href={"/gallery"}>
+      <Link className={`link ${font_accent.className}`} href={"/gallery"}>
         Галерея
       </Link>
     </motion.div>
