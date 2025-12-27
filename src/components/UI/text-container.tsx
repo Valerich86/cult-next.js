@@ -22,10 +22,10 @@ export default function TextContainer({
         shadow-black bg-brown ${optionalStyles}`}
     >
       <motion.div
-        // initial={{ x: -50, opacity: 0 }}
-        // whileInView={{ x: 0, opacity: 1 }}
-        // viewport={{ once: false, amount: 0.5 }}
-        // transition={{ duration: 0.4, delay: delay }}
+        initial={{ x: -50, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        viewport={{ once: false, amount: 0.5 }}
+        transition={{ duration: 0.4, delay: delay }}
       >
         <p
           className={`${font_default.className} text-sm text-secondary lg:text-xl`}

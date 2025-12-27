@@ -171,7 +171,7 @@ export default function UpdateNewsForm({
         className={`w-full flex flex-col items-center gap-5`}
       >
         <div className="w-full">
-          <label className="font-medium text-secondary flex gap-1">
+          <label className="mb-1 font-medium text-secondary flex gap-1">
             Текущий заголовок: <span className="text-red-500">*</span>
           </label>
           <input
@@ -186,7 +186,7 @@ export default function UpdateNewsForm({
         </div>
 
         <div className="w-full">
-          <label className="mb-4 font-medium text-secondary flex gap-1">
+          <label className="mb-1 font-medium text-secondary flex gap-1">
             Текущий контент: <span className="text-red-500">*</span>
           </label>
           <textarea
@@ -285,7 +285,7 @@ export default function UpdateNewsForm({
         className={`w-full flex flex-col items-center gap-5`}
       >
         <div className="w-full">
-          <label className="mb-4 font-medium text-secondary flex gap-1">
+          <label className="mb-1 font-medium text-secondary flex gap-1">
             {photos.length === 3
               ? "Чтобы добавить фото, удали старое"
               : `Можно добавить ${3 - photos.length} фото`}

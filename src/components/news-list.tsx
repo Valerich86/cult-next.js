@@ -8,6 +8,7 @@ import TextContainer from "./UI/text-container";
 import BigtextContainer from "./UI/bigtext-container";
 import type { News } from "./admin-news-page";
 import HTMLTextContainer from "./UI/editor/HTML-text-container";
+import { FormatTextWithLinks } from "./UI/format-text";
 
 export default function NewsList({ storageUrl }: { storageUrl: string }) {
   const [news, setNews] = useState<News[]>([]);
@@ -36,7 +37,7 @@ export default function NewsList({ storageUrl }: { storageUrl: string }) {
   };
 
   if (isLoading) {
-    return (<Loading/> );
+    return <Loading />;
   }
 
   const NewsItem = ({ item }: { item: News }) => {
@@ -94,8 +95,9 @@ export default function NewsList({ storageUrl }: { storageUrl: string }) {
               </div>
             ))}
         </div>
-        <BigtextContainer text={item.content} />
+        {/* <BigtextContainer text={item.content} /> */}
         {/* <HTMLTextContainer content={item.content} /> */}
+        <FormatTextWithLinks text={item.content} />
       </section>
     );
   };

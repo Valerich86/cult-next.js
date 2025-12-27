@@ -6,10 +6,10 @@ import { useRouter } from "next/navigation";
 
 interface SidebarProps {
   containerId: string;
-  scrollable: boolean;
+  scrollable?: boolean;
 }
 
-export default function Sidebar({ containerId, scrollable }: SidebarProps) {
+export default function Sidebar({ containerId, scrollable=true }: SidebarProps) {
   const router = useRouter();
 
   const returnToTop = () => {
