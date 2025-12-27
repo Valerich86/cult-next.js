@@ -19,7 +19,7 @@ export default async function Admin() {
   if (!isAdmin) redirect("/admin/login");
 
   return (
-    <div className="w-screen h-screen flex flex-col justify-center items-center gap-y-5">
+    <div className="w-screen h-screen flex flex-col justify-center items-center gap-y-10">
       {links.map((item, i) => (
         <Link href={item.href} key={i} className={`link ${font_accent.className}`}>
           {item.name}
