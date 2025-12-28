@@ -17,7 +17,7 @@ export default async function Gallery() {
   return (
     <div className="content" id="gallery">
       <Decor />
-      <Sidebar containerId="gallery" scrollable />
+      <Sidebar containerId="gallery" previous="/" />
 
       <Headline text={headline}/>
 

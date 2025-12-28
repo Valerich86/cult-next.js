@@ -2,6 +2,7 @@
 
 import { desc3, desc4 } from "@/lib/text/admin";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export type Master = {
   name: string;
@@ -20,13 +21,14 @@ export default function FileUploadForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState<string[]>([]);
+  const router = useRouter();
 
   // Обработчик выбора файлов
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       setFiles(Array.from(e.target.files));
       setError("");
-      setSuccess([]);
+      // setSuccess([]);
     }
   };
 
@@ -46,7 +48,7 @@ export default function FileUploadForm() {
 
     setIsLoading(true);
     setError("");
-    setSuccess([]);
+    // setSuccess([]);
 
     try {
       const formData = new FormData();
@@ -66,9 +68,7 @@ export default function FileUploadForm() {
       }
 
       const result = await response.json();
-      setSuccess(result.uploadedFiles);
-      setFiles([]);
-      setTargetFolder(masters[0].folder);
+      router.back();
     } catch (err) {
       setError((err as Error).message);
     } finally {
@@ -92,11 +92,7 @@ export default function FileUploadForm() {
             value={targetFolder}
           >
             {masters.map((item, i) => (
-              <option
-                key={i}
-                value={item.folder}
-                className="text-primary"
-              >
+              <option key={i} value={item.folder} className="text-primary">
                 {item.name}
               </option>
             ))}
@@ -107,7 +103,7 @@ export default function FileUploadForm() {
           <label className="mb-4 font-medium text-secondary flex gap-1">
             Выбери файлы <span className="text-red-500">*</span>
           </label>
-            <p className="text-xs text-secondary">{desc3}</p>
+          <p className="text-xs text-secondary">{desc3}</p>
           <input
             type="file"
             multiple
@@ -138,27 +134,6 @@ export default function FileUploadForm() {
           </div>
         )}
 
-        {success.length > 0 && (
-          <div className="mb-4 p-3 bg-green-100 text-green-700 border border-green-300 rounded">
-            <p>
-              <strong>Загружено успешно:</strong>
-            </p>
-            <ul className="mt-2 list-disc pl-5">
-              {success.map((url) => (
-                <li key={url}>
-                  <a
-                    href={url}
-                    target="_blank"
-                    className="text-blue-500 hover:underline"
-                  >
-                    {url}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
         <button
           type="submit"
           disabled={isLoading}
@@ -168,7 +143,9 @@ export default function FileUploadForm() {
         >
           {isLoading ? "Загружается..." : "Загрузить файлы"}
         </button>
-        <span className="text-red-500 italic text-xs">* - обязательно заполнить</span>
+        <span className="text-red-500 italic text-xs">
+          * - обязательно заполнить
+        </span>
         <p className="text-xs text-secondary">{desc4}</p>
       </form>
     </div>

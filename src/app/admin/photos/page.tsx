@@ -15,7 +15,7 @@ export default async function Photos() {
   
   return (
     <div className="content" id="admin-photos">
-      <Sidebar containerId="admin-photos"/>
+      <Sidebar containerId="admin-photos" previous="/admin"/>
       <h1 className={`text-secondary text-xl mt-10`}>
         На этой странице можно добавлять новые фото тату на сайт либо удалять
         старые.

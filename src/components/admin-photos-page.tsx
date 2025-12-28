@@ -55,8 +55,6 @@ export default function PhotosPage({ storageUrl }: { storageUrl: string }) {
       if (!response.ok) {
         throw new Error(data.error || "Failed to delete object");
       }
-
-      alert("Изображение успешно удалено!");
       getPhotos(selectedMaster!.folder, selectedMaster!);
     } catch (error) {
       console.error("Delete error:", error);

@@ -2,6 +2,8 @@ import { GiSheikahEye } from "react-icons/gi";
 import Sidebar from "@/components/UI/sidebar";
 import Headline from "@/components/UI/headline";
 import ImageContainer from "@/components/UI/image-container";
+import { Suspense } from "react";
+import Loading from "@/components/UI/loading";
 import {
   headline1,
   headline2,
@@ -48,7 +50,7 @@ export default async function About() {
 
   return (
     <div className="content" id="about">
-      <Sidebar containerId={"about"} scrollable />
+      <Sidebar containerId={"about"} previous="/" />
 
       <Decor />
 
@@ -62,7 +64,8 @@ export default async function About() {
           <TextContainer text={cult2} optionalStyles=" -ml-5" delay={0.1} />
           <TextContainer text={cult3} optionalStyles=" ml-5" delay={0.2} />
         </div>
-        <div className="image-block mt-48 sm:mt-0">
+        {/* <Suspense fallback={<Loading />}> */}
+          <div className="image-block mt-48 sm:mt-0">
           <ImageContainer
             src="/studio/studio-5.webp"
             optionalStyles="-top-20 -left-30"
@@ -99,6 +102,7 @@ export default async function About() {
             containerId="about"
           />
         </div>
+        {/* </Suspense> */}
       </section>
 
       <Headline text={headline2} />
@@ -179,9 +183,9 @@ export default async function About() {
         </div>
         <div className="relative w-screen h-screen mt-52">
           <VideoContainer src="/video/tan.mp4" />
-          <BigtextContainer
+          <BigtextContainer 
             text={tan5}
-            optionalStyles="justify-end items-start w-1/2 px-10 pt-10"
+            optionalStyles="absolute right-[5%] top-[5%] text-end"
           />
         </div>
         <div className="w-full mt-[20vh]">
@@ -265,7 +269,7 @@ export default async function About() {
           <VideoContainer src="/video/tan.mp4" />
           <BigtextContainer
             text={sonya5}
-            optionalStyles="justify-end items-start w-1/2 px-10 pt-10"
+            optionalStyles="absolute right-[5%] top-[5%] text-end"
           />
         </div>
         <div className="w-full mt-[20vh]">
@@ -327,7 +331,7 @@ export default async function About() {
           <VideoContainer src="/video/tan.mp4" />
           <BigtextContainer
             text={arthur5}
-            optionalStyles="justify-end items-start w-1/2 px-10 pt-10"
+            optionalStyles="absolute right-[5%] top-[5%] text-end"
           />
         </div>
         <div className="w-full mt-[20vh]">

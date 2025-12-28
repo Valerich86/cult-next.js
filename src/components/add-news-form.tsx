@@ -2,13 +2,15 @@
 
 import { desc1, desc2 } from "@/lib/text/admin";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function AddNewsForm() {
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
   const [error, setError] = useState("");
   const [form, setForm] = useState({
     title: "",
-    content: "<p>Начните писать здесь...</p>",
+    content: "",
   });
   const [files, setFiles] = useState<File[]>([]);
   const [success, setSuccess] = useState<string[]>([]);
@@ -19,7 +21,7 @@ export default function AddNewsForm() {
   const handleDone = () => {
     setForm({ title: "", content: "" });
     setTargetFolder(undefined);
-    window.location.href = "/admin/news";
+    router.replace("/admin/news");
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -120,12 +122,6 @@ export default function AddNewsForm() {
             cols={60}
             minLength={10}
           />
-          {/* <Editor
-            content={form.content}
-            onChange={(newContent) =>
-              setForm((prev) => ({ ...prev, content: newContent }))
-            }
-          /> */}
         </div>
         <button
           type="submit"
@@ -144,7 +140,7 @@ export default function AddNewsForm() {
       >
         <div className="w-full">
           <label className="mb-4 font-medium text-secondary flex gap-1">
-            Выбери изображения (до 3-х файлов .jpg, .png, .webp){" "}
+            Выбери изображения (рекомендуется не больше 3-х файлов .jpg, .png, .webp){" "}
             <span className="text-red-500">*</span>
           </label>
           <input
@@ -154,7 +150,7 @@ export default function AddNewsForm() {
             disabled={targetFolder === undefined}
             onChange={handleFileChange}
             className="w-full border border-gray-300 rounded px-3 py-2 text-secondary cursor-pointer"
-            accept="image/*" // Ограничиваем типы файлов
+            accept="image/*" 
           />
         </div>
 

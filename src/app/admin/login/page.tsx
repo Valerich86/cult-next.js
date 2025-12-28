@@ -2,11 +2,13 @@
 
 import { FormEvent, useState } from "react";
 import { TbFidgetSpinner } from "react-icons/tb"; 
+import { useRouter } from "next/navigation";
 
 export default function Login() {
   const [error, setError] = useState<string | null>(null);
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -20,7 +22,7 @@ export default function Login() {
         body: JSON.stringify({ password: password }),
       });
       if (response.ok) {
-        window.location.href = "/admin";
+        router.replace("/admin");
       } else if (response.status == 406) {
         setError((await response.json()).error);
       } else {
@@ -48,7 +50,7 @@ export default function Login() {
           <p className="mt-10 text-red-400 text-center">{error}</p>
         )}
         <button type="submit" className="admin-button mt-10 w-64">
-          {isLoading ? <TbFidgetSpinner size={50} color="gray" className="animate-spin"/> : "Войти"}
+          {isLoading ? <TbFidgetSpinner size={30} color="gray" className="animate-spin"/> : "Войти"}
         </button>
       </form>
     </div>

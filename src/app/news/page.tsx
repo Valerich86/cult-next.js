@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function News() {
   return (
     <div className="content" id="news">
-      <Sidebar containerId={"news"} scrollable />
+      <Sidebar containerId={"news"} previous="/" />
 
       <Decor />
 

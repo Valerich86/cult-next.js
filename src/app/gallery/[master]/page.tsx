@@ -19,7 +19,7 @@ export default async function Gallery(props: {
   return (
     <div className="content" id="gallery">
       <Decor />
-      <Sidebar containerId="gallery" scrollable/>
+      <Sidebar containerId="gallery" previous="/about"/>
       <Subtitle text={subtitle}/>
       <GallerySection master={master} storageUrl={`${baseUrl}/${bucketName}`}/>
     </div>

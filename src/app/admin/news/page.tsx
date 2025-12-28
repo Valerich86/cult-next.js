@@ -14,7 +14,7 @@ export default async function Photos() {
   
   return (
     <div className="content" id="admin-news">
-      <Sidebar containerId="admin-news"/>
+      <Sidebar containerId="admin-news" previous="/admin"/>
       <h1 className={`text-secondary text-xl mt-10`}>
         На этой странице можно добавлять, удалять и редактировать новости.
       </h1>

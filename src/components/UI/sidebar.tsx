@@ -6,10 +6,10 @@ import { useRouter } from "next/navigation";
 
 interface SidebarProps {
   containerId: string;
-  scrollable?: boolean;
+  previous: string;
 }
 
-export default function Sidebar({ containerId, scrollable=true }: SidebarProps) {
+export default function Sidebar({ containerId, previous }: SidebarProps) {
   const router = useRouter();
 
   const returnToTop = () => {
@@ -40,9 +40,12 @@ export default function Sidebar({ containerId, scrollable=true }: SidebarProps) 
   };
 
   return (
-    <div className="fixed flex flex-col justify-between right-[5%] top-1/2 -translate-y-1/2 z-50 h-4/5 items-center">
+    <>
       <span
-        className="text-peachy1 flex justify-center items-center cursor-pointer hover:animate-spinOnce animate-pulse"
+        className={`
+          text-peachy1 flex justify-center items-center 
+          cursor-pointer hover:animate-spinOnce animate-pulse
+          fixed z-50 right-[5%] top-[10%]`}
         onClick={() => {
           if (containerId === "about") router.replace("/");
           else router.back();
@@ -50,14 +53,24 @@ export default function Sidebar({ containerId, scrollable=true }: SidebarProps) 
       >
         <CgClose size={30} />
       </span>
-      {scrollable && (
-        <span
-          className="text-peachy1 flex justify-center items-center cursor-pointer hover:animate-iconTopHover animate-pulse"
-          onClick={returnToTop}
-        >
-          <AiOutlineUp size={30} />
-        </span>
-      )}
-    </div>
+      <span
+        className={`
+            text-peachy1 flex justify-center items-center 
+            cursor-pointer hover:animate-iconTopHover animate-pulse
+            fixed z-50 right-[5%] bottom-[10%]`}
+        onClick={returnToTop}
+      >
+        <AiOutlineUp size={30} />
+      </span>
+      <span
+        className={`
+            text-peachy1 flex justify-center items-center -rotate-90
+            cursor-pointer hover:animate-iconTopHover animate-pulse
+            fixed z-50 left-[5%] top-[10%]`}
+        onClick={() => router.replace(previous)}
+      >
+        <AiOutlineUp size={30} />
+      </span>
+    </>
   );
 }

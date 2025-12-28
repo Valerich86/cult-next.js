@@ -4,6 +4,7 @@ import Loading from "@/components/UI/loading";
 import { MdDelete } from "react-icons/md";
 import { useState, useEffect } from "react";
 import ImageContainer from "./UI/image-container";
+import { useRouter } from "next/navigation";
 
 export default function UpdateNewsForm({
   storageUrl,
@@ -23,6 +24,7 @@ export default function UpdateNewsForm({
   const [deleteModalIsOpen, setDeleteModalIsOpen] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     fetchNews();
@@ -59,7 +61,7 @@ export default function UpdateNewsForm({
   };
 
   const handleDone = () => {
-    window.location.href = "/admin/news";
+    router.replace("/admin/news");
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -138,12 +140,9 @@ export default function UpdateNewsForm({
       });
 
       const data = await response.json();
-
       if (!response.ok) {
         throw new Error(data.error || "Failed to delete object");
       }
-
-      alert("Изображение успешно удалено!");
       await fetchPhotos();
     } catch (error) {
       console.error("Delete error:", error);
@@ -280,7 +279,7 @@ export default function UpdateNewsForm({
         <div className="w-full">
           <label className="mb-1 font-medium text-secondary flex gap-1">
             {photos.length === 3
-              ? "Чтобы добавить фото, удали старое"
+              ? "Чтобы добавить фото, удали старое (рекомендуется не больше 3-х)"
               : `Можно добавить ${3 - photos.length} фото`}
             <span className="text-red-500">*</span>
           </label>

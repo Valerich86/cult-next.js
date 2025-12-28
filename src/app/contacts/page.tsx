@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function Contacts() {
   return (
     <div className="content" id="contacts">
-      <Sidebar containerId={"contacts"} scrollable />
+      <Sidebar containerId={"contacts"} previous="/" />
 
       <Decor count={1} />
 

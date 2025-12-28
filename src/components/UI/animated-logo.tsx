@@ -19,14 +19,6 @@ export default function AnimatedLogo() {
 
   return (
     <motion.div
-      // animate={{ x: [-1, 1, -1, 1, 0] }}
-      // transition={{
-      //   duration: 0.1,
-      //   repeat: 85,
-      //   repeatType: "reverse",
-      //   ease: "easeInOut",
-      //   repeatDelay: 0,
-      // }}
       className="w-screen h-screen overflow-hidden"
     >
       <div
