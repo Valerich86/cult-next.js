@@ -5,10 +5,10 @@ import { useRef, useEffect } from "react";
 
 interface VideoContainerProps {
   src: string;
-  className?: string;
+  position?: string;
 }
 
-export default function VideoContainer({ src }: { src: string }) {
+export default function VideoContainer({ src, position="center" }:VideoContainerProps) {
   const ref = useRef<HTMLVideoElement | null>(null);
   const isInView = useInView(ref, { amount: 0.3 });
 
@@ -25,7 +25,7 @@ export default function VideoContainer({ src }: { src: string }) {
   return (
     <motion.video
       ref={ref}
-      className="absolute w-full h-[90vh] rounded-xl shadow-lg opacity-40 object-cover"
+      className={`absolute w-full h-[90vh] rounded-xl shadow-lg opacity-40 object-cover object-${position}`}
       muted
       loop
       playsInline

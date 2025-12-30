@@ -161,10 +161,8 @@ export default function UpdateNewsForm({
       const response = await fetch(`api/news/${id}`, {
         method: "DELETE",
       });
-
-      const data = await response.json();
       if (!response.ok) {
-        throw new Error(data.error || "Failed to delete object");
+        throw new Error("Ошибка ");
       }
       window.location.replace("/admin/news");
     } catch (error) {

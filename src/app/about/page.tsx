@@ -341,7 +341,7 @@ export default async function About() {
           ))}
         </div>
         <div className="relative w-screen h-screen mt-52">
-          <VideoContainer src="/video/tan.mp4" />
+          <VideoContainer src="/video/arthur-2.webm" position="top"/>
           <BigtextContainer
             text={arthur5}
             optionalStyles="absolute right-[5%] top-[5%] text-end"

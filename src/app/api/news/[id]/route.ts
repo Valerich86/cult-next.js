@@ -45,9 +45,8 @@ export async function DELETE(
     await pool.query("DELETE FROM news WHERE id = $1", [id]);
     const command = new DeleteObjectCommand({
       Bucket: bucketName,
-      Key: `nes/${id}`,
+      Key: `news/${id}`,
     });
-
     await s3Client.send(command);
     return NextResponse.json({ status: 204 });
   } catch (error) {
