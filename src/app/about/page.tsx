@@ -7,6 +7,19 @@ import studio_2 from "../../../public/studio/studio-2.webp";
 import studio_3 from "../../../public/studio/studio-3.webp";
 import studio_4 from "../../../public/studio/studio-4.webp";
 import studio_5 from "../../../public/studio/studio-5.webp";
+import tan from "../../../public/studio/tan.png";
+import tan_2 from "../../../public/studio/tan-2.webp";
+import tan_3 from "../../../public/studio/tan-3.webp";
+import tan_4 from "../../../public/studio/tan-4.webp";
+import tan_5 from "../../../public/studio/tan-5.webp";
+import sonya from "../../../public/studio/sonya.png";
+import sonya_2 from "../../../public/studio/sonya-2.webp";
+import sonya_3 from "../../../public/studio/sonya-3.webp";
+import sonya_4 from "../../../public/studio/sonya-4.webp";
+import sonya_5 from "../../../public/studio/sonya-5.webp";
+import arthur from "../../../public/studio/arthur.png";
+import arthur_2 from "../../../public/studio/arthur-2.webp";
+import arthur_3 from "../../../public/studio/arthur-3.webp";
 import {
   headline1,
   headline2,
@@ -119,35 +132,35 @@ export default async function About() {
         <Subtitle text={subtitle2} />
         <div className="image-block">
           <ImageContainer
-            src="/studio/tan-2.webp"
+            src={tan_2}
             optionalStyles="left-30"
             delay={0}
             rotate={3}
             containerId="about"
           />
           <ImageContainer
-            src="/studio/tan-3.webp"
+            src={tan_3}
             optionalStyles="top-20 left-10"
             delay={0.1}
             rotate={-2}
             containerId="about"
           />
           <ImageContainer
-            src="/studio/tan-4.webp"
+            src={tan_4}
             optionalStyles="top-30 -left-10"
             delay={0.2}
             rotate={-6}
             containerId="about"
           />
           <ImageContainer
-            src="/studio/tan-5.webp"
+            src={tan_5}
             optionalStyles="top-45 -left-20"
             delay={0.3}
             rotate={-9}
             containerId="about"
           />
           <ImageContainer
-            src="/studio/tan.png"
+            src={tan}
             optionalStyles="top-60 -left-30"
             delay={0.4}
             border
@@ -216,28 +229,28 @@ export default async function About() {
         </div>
         <div className="image-block mt-48 sm:mt-0">
           <ImageContainer
-            src="/studio/sonya-2.webp"
+            src={sonya_2}
             optionalStyles="-top-20 -left-30"
             delay={0}
             rotate={-3}
             containerId="about"
           />
           <ImageContainer
-            src="/studio/sonya-3.webp"
+            src={sonya_3}
             optionalStyles=" -left-10"
             delay={0.1}
             rotate={3}
             containerId="about"
           />
           <ImageContainer
-            src="/studio/sonya-4.webp"
+            src={sonya_4}
             optionalStyles="top-20 left-20"
             delay={0.2}
             rotate={9}
             containerId="about"
           />
           <ImageContainer
-            src="/studio/sonya.png"
+            src={sonya}
             optionalStyles="top-40 left-30"
             delay={0.3}
             rotate={15}
@@ -271,7 +284,7 @@ export default async function About() {
           ))}
         </div>
         <div className="relative w-screen h-screen mt-52">
-          <VideoContainer src="/video/tan.mp4" />
+          <VideoContainer src="/video/sonya.webm" position=""/>
           <BigtextContainer
             text={sonya5}
             optionalStyles="absolute right-[5%] top-[5%] text-end"
@@ -287,7 +300,7 @@ export default async function About() {
         <Subtitle text={subtitle4} />
         <div className="image-block">
           <ImageContainer
-            src="/studio/arthur-3.webp"
+            src={arthur_3}
             optionalStyles="left-30"
             position="top"
             delay={0}
@@ -295,14 +308,14 @@ export default async function About() {
             containerId="about"
           />
           <ImageContainer
-            src="/studio/arthur-2.webp"
+            src={arthur_2}
             optionalStyles="top-30 left-5"
             delay={0.3}
             rotate={-3}
             containerId="about"
           />
           <ImageContainer
-            src="/studio/arthur.png"
+            src={arthur}
             optionalStyles="top-60 -left-20"
             delay={0.6}
             rotate={-9}

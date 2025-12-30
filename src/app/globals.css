@@ -34,7 +34,7 @@ h1 {
 }
 
 .text-block {
-  @apply relative flex flex-col items-center justify-between w-full sm:w-1/2 min-h-[80vh] gap-y-10;
+  @apply relative flex flex-col items-center justify-center w-full sm:w-1/2 gap-y-10;
 }
 
 .image-block {
