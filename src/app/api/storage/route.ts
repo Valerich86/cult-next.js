@@ -18,9 +18,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const uploadedFiles: string[] = [];
+    let uploadedFiles: string[] = [];
 
-    for (const file of files) {
+    for (let file of files) {
       try {
         // Проверяем, что файл — изображение
         if (!file.type.startsWith("image/")) {
