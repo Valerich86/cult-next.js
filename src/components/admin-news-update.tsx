@@ -158,7 +158,7 @@ export default function UpdateNewsForm({
   const handleDeleteNews = async () => {
     setIsDeleting(true);
     try {
-      const response = await fetch(`api/news/${id}`, {
+      const response = await fetch(`/api/news/${id}`, {
         method: "DELETE",
       });
       if (!response.ok) {
