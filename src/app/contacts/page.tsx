@@ -10,7 +10,7 @@ import { Metadata } from "next";
 import GetConsultation from "@/components/get-consultation";
 
 export const metadata: Metadata = {
-  title: "Контакты/",
+  title: "Контакты",
   description: "Как с нами связаться: адрес, телефон, Telegram, VK и форма онлайн‑консультации. Приходите в уютную студию или задайте вопрос — ответим быстро и подробно!"
 };
 

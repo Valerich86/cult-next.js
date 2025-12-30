@@ -6,7 +6,7 @@ import { Metadata } from "next";
 import NewsList from "../../components/news-list";
 
 export const metadata: Metadata = {
-  title: "Новости/",
+  title: "Новости",
   description: "Что нового в тату-студии: анонсы мероприятий, обзоры стилей и эксклюзивные акции. Оставайтесь на волне тату‑культуры — читайте наши новости!"
 };
 

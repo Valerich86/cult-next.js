@@ -4,7 +4,7 @@ import AnimatedLogo from "@/components/UI/animated-logo";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Главная/",
+  title: "Главная",
 };
 
 export default function Home() {

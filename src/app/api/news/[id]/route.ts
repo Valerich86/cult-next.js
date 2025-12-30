@@ -9,9 +9,7 @@ export async function GET(
 ) {
   try {
     const { id } = await params;
-    const result = await pool.query("SELECT * FROM news WHERE id = $1", [
-      id,
-    ]);
+    const result = await pool.query("SELECT * FROM news WHERE id = $1", [id]);
     return NextResponse.json(result.rows[0]);
   } catch (error) {
     console.error("Ошибка получения данных:", error);
@@ -25,12 +23,12 @@ export async function PUT(
 ) {
   try {
     const { id } = await params;
-    const {title, content} = await request.json();
+    const { title, content } = await request.json();
     await pool.query("UPDATE news SET title=$1, content=$2 WHERE id = $3", [
-        title,
-        content,
-        id
-      ]);
+      title,
+      content,
+      id,
+    ]);
     return NextResponse.json({ status: 204 });
   } catch (error) {
     console.error("Ошибка изменения данных:", error);
@@ -39,17 +37,18 @@ export async function PUT(
 }
 
 export async function DELETE(
+  request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const { id } = await params;
     await pool.query("DELETE FROM news WHERE id = $1", [id]);
     const command = new DeleteObjectCommand({
-          Bucket: bucketName,
-          Key: `nes/${id}`,
-        });
-    
-        await s3Client.send(command);
+      Bucket: bucketName,
+      Key: `nes/${id}`,
+    });
+
+    await s3Client.send(command);
     return NextResponse.json({ status: 204 });
   } catch (error) {
     console.error("Ошибка удаления данных:", error);

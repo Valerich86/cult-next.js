@@ -46,7 +46,7 @@ import { Metadata } from "next";
 import GetConsultation from "@/components/get-consultation";
 
 export const metadata: Metadata = {
-  title: "О нас/",
+  title: "О нас",
   description: "О студии: опыт, принципы и мастера. Мы создаём безопасные и уникальные татуировки с 2010 года. Посмотрите портфолио и получите консультацию уже сегодня."
 };
 
