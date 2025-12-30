@@ -1,16 +1,17 @@
-import { GiEvilEyes } from "react-icons/gi";
 import Sidebar from "@/components/UI/sidebar";
 import Headline from "@/components/UI/headline";
-import { headline, subtitle1, subtitle2, capture, info } from "@/lib/text/contacts";
+import { headline, subtitle1, subtitle2, caption, info } from "@/lib/text/contacts";
 import Socials from "@/components/UI/socials";
 import Decor from "@/components/UI/decor";
 import BigtextContainer from "@/components/UI/bigtext-container";
 import MyLogo from "@/components/UI/my-logo";
 import { font_capture } from "@/lib/fonts";
 import { Metadata } from "next";
+import GetConsultation from "@/components/get-consultation";
 
 export const metadata: Metadata = {
   title: "Контакты/",
+  description: "Как с нами связаться: адрес, телефон, Telegram, VK и форма онлайн‑консультации. Приходите в уютную студию или задайте вопрос — ответим быстро и подробно!"
 };
 
 export default function Contacts() {
@@ -23,24 +24,7 @@ export default function Contacts() {
       <Headline text={headline} />
 
       {/* получить консультацию */}
-      <section className="w-full h-screen flex flex-col justify-center gap-y-10">
-        <h1 className="text-xl text-secondary md:text-2xl text-left">
-          {subtitle2}
-        </h1>
-        <p className="text-secondary">{capture}</p>
-        <a
-          href="https://vk.me/cult_perm"
-          target="_blank"
-          aria-label="consultation"
-          className="w-full"
-        >
-          <div className="bg-secondary flex w-full md:w-72 py-3 rounded-full justify-center items-center">
-            <span className="text-peachy2 flex justify-between w-[90%] items-center animate-pulse">
-              <span>Получить</span> <GiEvilEyes size={70} /> консультацию
-            </span>
-          </div>
-        </a>
-      </section>
+      <GetConsultation subtitle={subtitle2} caption={caption}/>
 
       {/* соцсети */}
       <section className="w-full min-h-screen py-20 flex flex-col justify-center gap-y-20">

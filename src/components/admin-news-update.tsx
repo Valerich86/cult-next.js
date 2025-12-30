@@ -21,7 +21,8 @@ export default function UpdateNewsForm({
   const [success, setSuccess] = useState<string[]>([]);
   const [message, setMessage] = useState<string | null>(null);
   const [targetFolder, setTargetFolder] = useState(id);
-  const [deleteModalIsOpen, setDeleteModalIsOpen] = useState(false);
+  const [deletePhotoModalIsOpen, setDeletePhotoModalIsOpen] = useState(false);
+  const [deleteNewsModalIsOpen, setDeleteNewsModalIsOpen] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
   const router = useRouter();
@@ -150,7 +151,28 @@ export default function UpdateNewsForm({
     } finally {
       setIsDeleting(false);
       setSelectedPhoto(null);
-      setDeleteModalIsOpen(false);
+      setDeletePhotoModalIsOpen(false);
+    }
+  };
+
+  const handleDeleteNews = async () => {
+    setIsDeleting(true);
+    try {
+      const response = await fetch(`api/news/${id}`, {
+        method: "DELETE",
+      });
+
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to delete object");
+      }
+      window.location.replace("/admin/news");
+    } catch (error) {
+      console.error("Delete error:", error);
+      alert(`Error: ${error}`);
+    } finally {
+      setIsDeleting(false);
+      setDeleteNewsModalIsOpen(false);
     }
   };
 
@@ -190,7 +212,10 @@ export default function UpdateNewsForm({
           <textarea
             className="w-full border border-gray-300 rounded px-3 py-2 text-secondary"
             value={form.content}
-            onChange={(e) => {setForm({ ...form, content: e.target.value }); setMessage(null);}}
+            onChange={(e) => {
+              setForm({ ...form, content: e.target.value });
+              setMessage(null);
+            }}
             placeholder="минимум 10 символов"
             required
             rows={20}
@@ -203,10 +228,18 @@ export default function UpdateNewsForm({
           disabled={isLoading}
           className={`px-4 py-2 rounded text-white cursor-pointer w-full bg-peachy2 hover:bg-peachy1`}
         >
-          {"Исправить"}
+          Исправить
         </button>
         {message && <strong className="text-green-500">{message}</strong>}
       </form>
+
+      <button
+        disabled={isLoading}
+        onClick={() => setDeleteNewsModalIsOpen(true)}
+        className={`px-4 py-2 rounded text-white cursor-pointer w-full bg-red-500 hover:bg-red-400`}
+      >
+        Удалить новость
+      </button>
 
       {!isLoading &&
         !error &&
@@ -228,7 +261,7 @@ export default function UpdateNewsForm({
             <div
               onClick={() => {
                 setSelectedPhoto(photo);
-                setDeleteModalIsOpen(!deleteModalIsOpen);
+                setDeletePhotoModalIsOpen(!deletePhotoModalIsOpen);
               }}
               className="text-red-500 absolute -top-3 -right-3 cursor-pointer hover:opacity-80 active:scale-80"
             >
@@ -238,7 +271,7 @@ export default function UpdateNewsForm({
         ))}
 
       {/* модальное окно удаления фото */}
-      {deleteModalIsOpen && (
+      {deletePhotoModalIsOpen && (
         <>
           <div className="w-screen h-screen bg-red-500 opacity-40 absolute top-0 left-0"></div>
           <div className="absolute w-5/6 lg:w-1/3 sm:w-2/3 h-1/2 rounded-2xl px-10 bg-primary left-[50%] -translate-x-[50%] z-10 flex flex-col justify-around items-center">
@@ -253,7 +286,7 @@ export default function UpdateNewsForm({
                 style={{ backgroundColor: "gray" }}
                 onClick={() => {
                   setSelectedPhoto(null);
-                  setDeleteModalIsOpen(false);
+                  setDeletePhotoModalIsOpen(false);
                 }}
                 disabled={isDeleting}
               >
@@ -263,6 +296,43 @@ export default function UpdateNewsForm({
                 className="admin-button w-25"
                 style={{ backgroundColor: "red" }}
                 onClick={handleDeletePhoto}
+                disabled={isDeleting}
+              >
+                Удалить
+              </button>
+            </div>
+          </div>
+        </>
+      )}
+
+      {/* модальное окно удаления новости */}
+      {deleteNewsModalIsOpen && (
+        <>
+          <div className="w-screen h-screen bg-red-500 opacity-40 absolute top-0 left-0"></div>
+          <div className="absolute w-5/6 lg:w-1/3 sm:w-2/3 h-1/2 rounded-2xl px-10 bg-primary left-[50%] -translate-x-[50%] z-10 flex flex-col justify-around items-center">
+            <p className="text-secondary text-center">
+              {!isDeleting &&
+                `Ты уверен, что хочешь удалить новость "${form.title.substring(
+                  0,
+                  50
+                )}..."?`}
+              {isDeleting && `Удаляю новость...`}
+            </p>
+            <div className="flex w-full justify-around">
+              <button
+                className="admin-button w-25"
+                style={{ backgroundColor: "gray" }}
+                onClick={() => {
+                  setDeleteNewsModalIsOpen(false);
+                }}
+                disabled={isDeleting}
+              >
+                Отмена
+              </button>
+              <button
+                className="admin-button w-25"
+                style={{ backgroundColor: "red" }}
+                onClick={handleDeleteNews}
                 disabled={isDeleting}
               >
                 Удалить

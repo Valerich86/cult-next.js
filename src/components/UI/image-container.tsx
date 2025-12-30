@@ -3,10 +3,13 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Loading from "./loading";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 interface ImageContainerProps {
-  src: string;
+  src: string | StaticImport;
   optionalStyles?: string;
+  position?: string;
   rotate?: number;
   delay?: number;
   border?: boolean;
@@ -17,6 +20,7 @@ interface ImageContainerProps {
 export default function ImageContainer({
   src,
   optionalStyles = "",
+  position = "center",
   delay = 0,
   border = true,
   animateOnce = false,
@@ -26,6 +30,9 @@ export default function ImageContainer({
   const [fullscreen, setFullscreen] = useState(false);
   const [rotation, setRotation] = useState(rotate);
   const [curDelay, setCurDelay] = useState(delay);
+  const [status, setStatus] = useState<"loading" | "loaded" | "error">(
+    "loading"
+  );
 
   const showCloser = () => {
     const container = document.getElementById(containerId);
@@ -66,6 +73,8 @@ export default function ImageContainer({
         }}
         style={{ rotate: rotation }}
       >
+        {status === "loading" && <Loading />}
+        {status === "error" && <span>❌ Изображение не загрузилось</span>}
         <Image
           src={src}
           alt=""
@@ -73,9 +82,9 @@ export default function ImageContainer({
           height={300}
           className={`h-full w-full ${
             fullscreen ? "object-contain" : "object-cover"
-          } object-center`}
-          // quality={75} 
-          // loading="lazy" 
+          } object-${position}`}
+          onLoad={() => setStatus("loaded")}
+          onError={() => setStatus("error")}
         />
       </motion.div>
     </>

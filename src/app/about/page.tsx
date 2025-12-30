@@ -2,8 +2,11 @@ import { GiSheikahEye } from "react-icons/gi";
 import Sidebar from "@/components/UI/sidebar";
 import Headline from "@/components/UI/headline";
 import ImageContainer from "@/components/UI/image-container";
-import { Suspense } from "react";
-import Loading from "@/components/UI/loading";
+import studio from "../../../public/studio/studio.webp";
+import studio_2 from "../../../public/studio/studio-2.webp";
+import studio_3 from "../../../public/studio/studio-3.webp";
+import studio_4 from "../../../public/studio/studio-4.webp";
+import studio_5 from "../../../public/studio/studio-5.webp";
 import {
   headline1,
   headline2,
@@ -28,6 +31,8 @@ import {
   arthur2,
   arthur3,
   arthur5,
+  subtitle5,
+  caption,
 } from "@/lib/text/about";
 import TextContainer from "@/components/UI/text-container";
 import Subtitle from "@/components/UI/subtitle";
@@ -38,9 +43,11 @@ import BigtextContainer from "@/components/UI/bigtext-container";
 import Socials from "@/components/UI/socials";
 import { getFiles } from "@/lib/images";
 import { Metadata } from "next";
+import GetConsultation from "@/components/get-consultation";
 
 export const metadata: Metadata = {
   title: "О нас/",
+  description: "О студии: опыт, принципы и мастера. Мы создаём безопасные и уникальные татуировки с 2010 года. Посмотрите портфолио и получите консультацию уже сегодня."
 };
 
 export default async function About() {
@@ -59,55 +66,53 @@ export default async function About() {
       {/* секция "Студия"  */}
       <section className="min-h-screen w-full flex flex-wrap items-center justify-center mb-48">
         <Subtitle text={subtitle1} />
-        <div className="text-block">
-          <TextContainer text={cult1} delay={0} />
+        <BigtextContainer text={cult0} />
+        {/* <div className="text-block">
+          <TextContainer text={cult3} delay={0} />
           <TextContainer text={cult2} optionalStyles=" -ml-5" delay={0.1} />
-          <TextContainer text={cult3} optionalStyles=" ml-5" delay={0.2} />
-        </div>
-        {/* <Suspense fallback={<Loading />}> */}
-          <div className="image-block mt-48 sm:mt-0">
+          <TextContainer text={cult1} optionalStyles=" ml-5" delay={0.2} />
+        </div> */}
+        <div className="image-block mt-48 sm:mt-24">
           <ImageContainer
-            src="/studio/studio-5.webp"
+            src={studio_5}
             optionalStyles="-top-20 -left-30"
             delay={0}
             rotate={-3}
             containerId="about"
           />
           <ImageContainer
-            src="/studio/studio-3.webp"
+            src={studio_3}
             optionalStyles=" -left-10"
             delay={0.1}
             rotate={3}
             containerId="about"
           />
           <ImageContainer
-            src="/studio/studio-4.webp"
+            src={studio_4}
             optionalStyles="top-20 left-10"
             delay={0.2}
             rotate={6}
             containerId="about"
           />
           <ImageContainer
-            src="/studio/studio-2.webp"
+            src={studio_2}
             optionalStyles="top-40 left-15"
             delay={0.3}
             rotate={12}
             containerId="about"
           />
           <ImageContainer
-            src="/studio/studio.webp"
+            src={studio}
             optionalStyles="top-60"
             delay={0.3}
             rotate={15}
             containerId="about"
           />
         </div>
-        {/* </Suspense> */}
       </section>
 
       <Headline text={headline2} />
 
-      <BigtextContainer text={cult0} />
 
       {/* секция "Андрей"  */}
       <section className="min-h-screen w-full flex flex-wrap items-center justify-center">
@@ -183,7 +188,7 @@ export default async function About() {
         </div>
         <div className="relative w-screen h-screen mt-52">
           <VideoContainer src="/video/tan.mp4" />
-          <BigtextContainer 
+          <BigtextContainer
             text={tan5}
             optionalStyles="absolute right-[5%] top-[5%] text-end"
           />
@@ -282,16 +287,24 @@ export default async function About() {
         <Subtitle text={subtitle4} />
         <div className="image-block">
           <ImageContainer
-            src="/studio/arthur-2.webp"
+            src="/studio/arthur-3.webp"
             optionalStyles="left-30"
+            position="top"
             delay={0}
             rotate={3}
             containerId="about"
           />
           <ImageContainer
+            src="/studio/arthur-2.webp"
+            optionalStyles="top-30 left-5"
+            delay={0.3}
+            rotate={-3}
+            containerId="about"
+          />
+          <ImageContainer
             src="/studio/arthur.png"
             optionalStyles="top-60 -left-20"
-            delay={0.3}
+            delay={0.6}
             rotate={-9}
             border
             containerId="about"
@@ -342,6 +355,7 @@ export default async function About() {
           />
         </div>
       </section>
+      <GetConsultation subtitle={subtitle5} caption={caption}/>
     </div>
   );
 }

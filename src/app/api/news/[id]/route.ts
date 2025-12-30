@@ -1,5 +1,7 @@
 import { pool } from "@/lib/db";
 import { NextResponse } from "next/server";
+import { s3Client, bucketName } from "@/lib/vk-cloud";
+import { DeleteObjectCommand } from "@aws-sdk/client-s3";
 
 export async function GET(
   request: Request,
@@ -36,16 +38,21 @@ export async function PUT(
   }
 }
 
-// export async function DELETE(
-//   request: Request,
-//   { params }: { params: Promise<{ id: string }> }
-// ) {
-//   try {
-//     const { id } = await params;
-//     await pool.query("DELETE FROM surveys WHERE id = $1", [id]);
-//     return NextResponse.json({ status: 204 });
-//   } catch (error) {
-//     console.error("Ошибка удаления данных:", error);
-//     return NextResponse.json({ status: 500 });
-//   }
-// }
+export async function DELETE(
+  { params }: { params: Promise<{ id: string }> }
+) {
+  try {
+    const { id } = await params;
+    await pool.query("DELETE FROM news WHERE id = $1", [id]);
+    const command = new DeleteObjectCommand({
+          Bucket: bucketName,
+          Key: `nes/${id}`,
+        });
+    
+        await s3Client.send(command);
+    return NextResponse.json({ status: 204 });
+  } catch (error) {
+    console.error("Ошибка удаления данных:", error);
+    return NextResponse.json({ status: 500 });
+  }
+}

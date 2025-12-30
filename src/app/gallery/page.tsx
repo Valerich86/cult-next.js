@@ -10,6 +10,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Галерея/",
+  description: "Галерея татуировок: реальные работы наших мастеров. От минимализма до масштабных проектов. Найдите свой идеальный эскиз и обсудите детали с художником."
 };
 
 export default async function Gallery() {

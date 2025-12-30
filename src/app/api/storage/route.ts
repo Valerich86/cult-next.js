@@ -8,6 +8,7 @@ export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData();
     const targetFolder = formData.get("targetFolder") as string;
+    // const targetFolder = "tech";
     const files = formData.getAll("files") as File[];
 
     if (files.length === 0) {

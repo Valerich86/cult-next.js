@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     template: "CULT | %s",
     default: "CULT",
   },
+  description: "CULT (Культ). Студия татуировки и лазерного удаления, г.Пермь"
 };
 
 export default function RootLayout({

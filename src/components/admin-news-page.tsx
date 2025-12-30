@@ -21,6 +21,7 @@ export default function NewsPage() {
   }, []);
 
   async function fetchNews() {
+    console.log("fetch news")
     setIsLoading(true);
     try {
       const response = await fetch("/api/news");
