@@ -42,6 +42,7 @@ export async function DELETE(
 ) {
   try {
     const { id } = await params;
+    console.log(id)
     await pool.query("DELETE FROM news WHERE id = $1", [id]);
     const command = new DeleteObjectCommand({
       Bucket: bucketName,

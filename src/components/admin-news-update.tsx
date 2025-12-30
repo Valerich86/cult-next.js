@@ -162,7 +162,7 @@ export default function UpdateNewsForm({
         method: "DELETE",
       });
       if (!response.ok) {
-        throw new Error("Ошибка ");
+        throw new Error(`Ошибка удаления данных по id: ${id}`);
       }
       window.location.replace("/admin/news");
     } catch (error) {
