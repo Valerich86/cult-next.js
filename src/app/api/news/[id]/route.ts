@@ -49,7 +49,7 @@ export async function DELETE(
       Key: `news/${id}`,
     });
     await s3Client.send(command);
-    return NextResponse.json({ status: 204 });
+    return NextResponse.json({}, { status: 204 });
   } catch (error) {
     console.error("Ошибка удаления данных:", error);
     return NextResponse.json({ status: 500 });
