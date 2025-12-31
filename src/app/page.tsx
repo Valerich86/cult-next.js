@@ -4,6 +4,7 @@ import AnimatedLogo from "@/components/UI/animated-logo";
 import { Metadata } from "next";
 import VideoContainer from "@/components/UI/video-container";
 import TextContainer from "@/components/UI/text-container";
+import { NY } from "@/lib/text/about";
 
 export const metadata: Metadata = {
   title: "Главная",
@@ -12,9 +13,9 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="overflow-hidden">
-      <div className="relative w-screen h-screen flex justify-center">
+      <TextContainer text={NY} optionalStyles="z-50 absolute" />
+      <div className="w-screen h-screen flex justify-center pt-20">
         <VideoContainer src={"/video/NY.webm"} />
-        <TextContainer text="С новым годом!" optionalStyles="z-50 absolute top-40" />
       </div>
       {/* <NavigationBar />
       <AnimatedCapture />
