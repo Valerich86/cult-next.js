@@ -12,6 +12,7 @@ import tan_2 from "../../../public/studio/tan-2.webp";
 import tan_3 from "../../../public/studio/tan-3.webp";
 import tan_4 from "../../../public/studio/tan-4.webp";
 import tan_5 from "../../../public/studio/tan-5.webp";
+import tan_6 from "../../../public/studio/tan-6.webp";
 import sonya from "../../../public/studio/sonya.png";
 import sonya_2 from "../../../public/studio/sonya-2.webp";
 import sonya_3 from "../../../public/studio/sonya-3.webp";
@@ -160,11 +161,17 @@ export default async function About() {
             containerId="about"
           />
           <ImageContainer
-            src={tan}
+            src={tan_6}
             optionalStyles="top-60 -left-30"
             delay={0.4}
-            border
             rotate={-11}
+            containerId="about"
+          />
+          <ImageContainer
+            src={tan}
+            optionalStyles="top-75 -left-40"
+            delay={0.5}
+            rotate={-14}
             containerId="about"
           />
         </div>
