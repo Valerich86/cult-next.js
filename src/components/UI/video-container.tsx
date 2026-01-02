@@ -29,7 +29,6 @@ export default function VideoContainer({ src, position="center" }:VideoContainer
       muted
       loop
       playsInline
-      // src={src}
     >
       <source src={src} type="video/mp4" />
       {/* Резервный контент — отобразится, если видео не поддерживается */}
