@@ -13,10 +13,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="overflow-hidden">
-      {/* <TextContainer text={NY} optionalStyles="z-50 absolute" />
-      <div className="w-screen h-screen flex justify-center pt-20">
-        <VideoContainer src={"/video/NY.webm"} />
-      </div> */}
       <NavigationBar />
       <AnimatedCapture />
       <AnimatedLogo />

@@ -23,7 +23,7 @@ export default function ImageContainer({
   position = "center",
   delay = 0,
   border = true,
-  animateOnce = false,
+  animateOnce = true,
   rotate = 0,
   containerId,
 }: ImageContainerProps) {

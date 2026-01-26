@@ -21,6 +21,30 @@ import sonya_5 from "../../../public/studio/sonya-5.webp";
 import arthur from "../../../public/studio/arthur.png";
 import arthur_2 from "../../../public/studio/arthur-2.webp";
 import arthur_3 from "../../../public/studio/arthur-3.webp";
+import tattoo_tan_1 from "../../../public/tan/tattoo-tan-1.webp";
+import tattoo_tan_2 from "../../../public/tan/tattoo-tan-2.webp";
+import tattoo_tan_3 from "../../../public/tan/tattoo-tan-3.webp";
+import tattoo_tan_4 from "../../../public/tan/tattoo-tan-4.webp";
+import tattoo_tan_5 from "../../../public/tan/tattoo-tan-5.webp";
+import tattoo_tan_6 from "../../../public/tan/tattoo-tan-6.webp";
+import tattoo_tan_7 from "../../../public/tan/tattoo-tan-7.webp";
+import tattoo_tan_8 from "../../../public/tan/tattoo-tan-8.webp";
+import tattoo_sonya_1 from "../../../public/sonya/tattoo-sonya-1.webp";
+import tattoo_sonya_2 from "../../../public/sonya/tattoo-sonya-2.webp";
+import tattoo_sonya_3 from "../../../public/sonya/tattoo-sonya-3.webp";
+import tattoo_sonya_4 from "../../../public/sonya/tattoo-sonya-4.webp";
+import tattoo_sonya_5 from "../../../public/sonya/tattoo-sonya-5.webp";
+import tattoo_sonya_6 from "../../../public/sonya/tattoo-sonya-6.webp";
+import tattoo_sonya_7 from "../../../public/sonya/tattoo-sonya-7.webp";
+import tattoo_sonya_8 from "../../../public/sonya/tattoo-sonya-8.webp";
+import tattoo_arthur_1 from "../../../public/arthur/tattoo-arthur-1.webp";
+import tattoo_arthur_2 from "../../../public/arthur/tattoo-arthur-2.webp";
+import tattoo_arthur_3 from "../../../public/arthur/tattoo-arthur-3.webp";
+import tattoo_arthur_4 from "../../../public/arthur/tattoo-arthur-4.webp";
+import tattoo_arthur_5 from "../../../public/arthur/tattoo-arthur-5.webp";
+import tattoo_arthur_6 from "../../../public/arthur/tattoo-arthur-6.webp";
+import tattoo_arthur_7 from "../../../public/arthur/tattoo-arthur-7.webp";
+import tattoo_arthur_8 from "../../../public/arthur/tattoo-arthur-8.webp";
 import {
   headline1,
   headline2,
@@ -65,9 +89,12 @@ export const metadata: Metadata = {
 };
 
 export default async function About() {
-  const tanStaticTattoos = await getFiles("tan");
-  const sonyaStaticTattoos = await getFiles("sonya");
-  const arthurStaticTattoos = await getFiles("arthur");
+  // const tanStaticTattoos = await getFiles("tan");
+  // const sonyaStaticTattoos = await getFiles("sonya");
+  // const arthurStaticTattoos = await getFiles("arthur");
+  const tanStaticTattoos = [tattoo_tan_1, tattoo_tan_2, tattoo_tan_3, tattoo_tan_4, tattoo_tan_5, tattoo_tan_6, tattoo_tan_7, tattoo_tan_8];
+  const sonyaStaticTattoos = [tattoo_sonya_1, tattoo_sonya_2, tattoo_sonya_3, tattoo_sonya_4, tattoo_sonya_5, tattoo_sonya_6, tattoo_sonya_7, tattoo_sonya_8];
+  const arthurStaticTattoos = [tattoo_arthur_1, tattoo_arthur_2, tattoo_arthur_3, tattoo_arthur_4, tattoo_arthur_5, tattoo_arthur_6, tattoo_arthur_7, tattoo_arthur_8];
 
   return (
     <div className="content" id="about">
@@ -198,7 +225,7 @@ export default async function About() {
           {tanStaticTattoos?.map((item, i) => (
             <div className="relative w-36 h-28 lg:w-32" key={i}>
               <ImageContainer
-                src={`/tan/${item}`}
+                src={item}
                 delay={i / 10}
                 rotate={Math.floor(Math.random() * 21) - 10}
                 containerId="about"
@@ -282,7 +309,7 @@ export default async function About() {
           {sonyaStaticTattoos?.map((item, i) => (
             <div className="relative w-36 h-28 lg:w-32" key={i}>
               <ImageContainer
-                src={`/sonya/${item}`}
+                src={item}
                 delay={i / 10}
                 rotate={Math.floor(Math.random() * 21) - 10}
                 containerId="about"
@@ -352,7 +379,7 @@ export default async function About() {
           {arthurStaticTattoos?.map((item, i) => (
             <div className="relative w-36 h-28 lg:w-32" key={i}>
               <ImageContainer
-                src={`/arthur/${item}`}
+                src={item}
                 delay={i / 10}
                 rotate={Math.floor(Math.random() * 21) - 10}
                 containerId="about"
