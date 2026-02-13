@@ -10,8 +10,8 @@ export default function GetConsultation({
   caption="",
 }: GetConsultationProps) {
   return (
-    <section className="w-full h-screen flex flex-col justify-center gap-y-10">
-      <h1 className="text-xl text-secondary md:text-2xl text-left">
+    <section className="w-full h-screen flex flex-col justify-center items-center gap-y-10 text-center">
+      <h1 className="text-xl text-secondary md:text-2xl">
         {subtitle}
       </h1>
       <p className="text-secondary">{caption}</p>
@@ -19,13 +19,11 @@ export default function GetConsultation({
         href="https://vk.me/cult_perm"
         target="_blank"
         aria-label="consultation"
-        className="w-full"
+        className="bg-secondary flex w-full md:w-72 py-3 rounded-full justify-center items-center"
       >
-        <div className="bg-secondary flex w-full md:w-72 py-3 rounded-full justify-center items-center">
           <span className="text-peachy2 flex justify-between w-[90%] items-center animate-pulse">
             <span>Получить</span> <GiEvilEyes size={70} /> консультацию
           </span>
-        </div>
       </a>
     </section>
   );

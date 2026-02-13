@@ -42,34 +42,25 @@ export default function Sidebar({ containerId, previous }: SidebarProps) {
   return (
     <>
       <span
-        className={`
-          text-peachy1 flex justify-center items-center 
-          cursor-pointer hover:animate-spinOnce animate-pulse
-          fixed z-50 right-[5%] top-[10%]`}
+        className={`sidebar-icon hover:opacity-100 right-[5%] top-[10%]`}
         onClick={() => {
           if (containerId === "about") router.replace("/");
           else router.back();
         }}
       >
-        <CgClose size={30} />
+        <CgClose size={25} />
       </span>
       <span
-        className={`
-            text-peachy1 flex justify-center items-center 
-            cursor-pointer hover:animate-iconTopHover animate-pulse
-            fixed z-50 right-[5%] bottom-[10%]`}
+        className={`sidebar-icon right-[5%] bottom-[10%]`}
         onClick={returnToTop}
       >
-        <AiOutlineUp size={30} />
+        <AiOutlineUp size={25} />
       </span>
       <span
-        className={`
-            text-peachy1 flex justify-center items-center -rotate-90
-            cursor-pointer hover:animate-iconTopHover animate-pulse
-            fixed z-50 left-[5%] top-[10%]`}
+        className={`sidebar-icon -rotate-90 left-[5%] top-[10%]`}
         onClick={() => router.replace(previous)}
       >
-        <AiOutlineUp size={30} />
+        <AiOutlineUp size={25} />
       </span>
     </>
   );

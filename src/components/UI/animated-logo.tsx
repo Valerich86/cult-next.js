@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
-
 export default function AnimatedLogo() {
   const [isAnimated, setIsAnimated] = useState(false);
 
@@ -14,17 +13,16 @@ export default function AnimatedLogo() {
   //   if (!animated) {
   //     setIsAnimated (false);
   //     localStorage.setItem("animated", "true");
-  //   }; 
+  //   };
   // }, []);
 
   return (
-    <motion.div
-      className="w-screen h-screen overflow-hidden"
-    >
+    <motion.div className="w-screen h-screen overflow-hidden">
       <div
         className={`${isAnimated ? "animate-alternativeBG" : "animate-logoShiningBG"} opacity-70 absolute top-0 left-0 w-full h-full flex justify-center items-center overflow-hidden`}
       >
         <Image
+          id="logo-BG"
           src="/technical/logo-BG-2.webp"
           alt=""
           loading="eager"
@@ -37,7 +35,9 @@ export default function AnimatedLogo() {
         className={`${isAnimated ? "animate-none" : "animate-logoShiningFG"} opacity-5 absolute top-0 left-0 w-full h-full flex justify-center items-center overflow-hidden`}
       >
         <Image
+          id="logo-FG"
           src="/technical/logo-FG-2.webp"
+          loading="eager"
           alt=""
           width={200}
           height={400}

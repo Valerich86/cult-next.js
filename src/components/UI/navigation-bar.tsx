@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useEffect } from "react";
 import { font_accent } from "@/lib/fonts";
 
 const Link1 = () => {
@@ -41,7 +40,7 @@ const Link2 = () => {
   );
 };
 
-const Link5 = () => {
+const Link3 = () => {
   return (
     <motion.div
       className=""
@@ -58,27 +57,6 @@ const Link5 = () => {
     </motion.div>
   );
 };
-
-// const Link3 = () => {
-//   return (
-//     <motion.div
-//     className="absolute left-[25vw] bottom-[20vh]"
-//       initial={{ opacity: 0 }}
-//       whileInView={{ opacity: 1 }}
-//       viewport={{ once: false }}
-//       transition={{
-//         opacity: { duration: 2, delay: 1.4 },
-//       }}
-//     >
-//         <Link
-//           className={linkStyle}
-//           href={"/feedbacks"}
-//         >
-//           Отзывы
-//         </Link>
-//     </motion.div>
-//   );
-// };
 
 const Link4 = () => {
   return (
@@ -112,7 +90,7 @@ export default function NavigationBar() {
         <Link2 />
       </div>
       <div className="w-screen h-[65vh] flex flex-col justify-between items-center">
-        <Link5 />
+        <Link3 />
         <Link4 />
       </div>
     </div>

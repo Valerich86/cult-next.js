@@ -73,7 +73,11 @@ export default function ImageContainer({
         }}
         style={{ rotate: rotation }}
       >
-        {status === "loading" && <span className="text-xs text-secondary text-center">...</span>}
+        {status === "loading" && (
+          <div className="w-full h-full flex justify-center items-center">
+            <span className="text-xs text-secondary">Фото загружается...</span>
+          </div>
+        )}
         {status === "error" && <span className="text-xs text-red-500">❌ Изображение не загрузилось</span>}
         <Image
           src={src}

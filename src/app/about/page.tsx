@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+import Link from "next/link";
 import { GiSheikahEye } from "react-icons/gi";
 import Sidebar from "@/components/UI/sidebar";
 import Headline from "@/components/UI/headline";
@@ -75,12 +77,10 @@ import {
 import TextContainer from "@/components/UI/text-container";
 import Subtitle from "@/components/UI/subtitle";
 import Decor from "@/components/UI/decor";
-import Link from "next/link";
 import VideoContainer from "@/components/UI/video-container";
 import BigtextContainer from "@/components/UI/bigtext-container";
 import Socials from "@/components/UI/socials";
 import { getFiles } from "@/lib/images";
-import { Metadata } from "next";
 import GetConsultation from "@/components/get-consultation";
 
 export const metadata: Metadata = {

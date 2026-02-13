@@ -5,7 +5,7 @@ import Socials from "@/components/UI/socials";
 import Decor from "@/components/UI/decor";
 import BigtextContainer from "@/components/UI/bigtext-container";
 import MyLogo from "@/components/UI/my-logo";
-import { font_capture } from "@/lib/fonts";
+import { font_caption } from "@/lib/fonts";
 import { Metadata } from "next";
 import GetConsultation from "@/components/get-consultation";
 
@@ -83,7 +83,7 @@ export default function Contacts() {
         <BigtextContainer text={info} />
         {/* <div className="flex items-center gap-x-10">
           <span
-            className={`${font_capture.className} text-xl lg:text-2xl text-secondary`}
+            className={`${font_caption.className} text-xl lg:text-2xl text-secondary`}
           >
             Разработчик сайта:{" "}
           </span>

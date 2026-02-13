@@ -12,7 +12,7 @@ export default function Decor({count=2, maxSize=10}:DecorProps) {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true); // Устанавливаем только на клиенте
+    setIsClient(true); 
   }, []);
 
   if (!isClient) {
