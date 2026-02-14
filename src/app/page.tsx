@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="overflow-hidden">
-      <Decor count={5}/>
+      {/* <Decor count={5}/> */}
       <NavigationBar />
       <AnimatedCaption />
       <AnimatedLogo />
